@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | Generative AI Course</title>
+    <link rel="stylesheet" href="assets/course-ui.css">
+    <script src="assets/user-session.js" defer></script>
+  </head>
+  <body>
+    <main class="login-shell">
+      <section class="login-panel" aria-labelledby="login-title">
+        <p class="eyebrow">Course Access</p>
+        <h1 id="login-title">Login to continue</h1>
+        <p class="login-text">Complete the course access form, then enter the same name and email address to continue.</p>
+
+        <a class="button secondary form-link" href="https://forms.gle/PkKdpGSKmMQpybqq5" target="_blank" rel="noopener">
+          Open Google Form
+        </a>
+
+        <form class="login-form" data-login-form>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label class="check-row" for="form-submitted">
+            <input id="form-submitted" name="form-submitted" type="checkbox" required>
+            <span>I completed the Google Form.</span>
+          </label>
+
+          <button class="button primary" type="submit">Continue</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
