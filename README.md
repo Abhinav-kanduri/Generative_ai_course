@@ -5,7 +5,7 @@
 **LinkedIn:** https://www.linkedin.com/in/abhinav-kanduri-a943b9353/  
 **Purpose:** Knowledge transfer only.
 
-## Course Focus
+### Course Focus
 
 This course repository is designed as a clean knowledge-transfer hub for:
 
