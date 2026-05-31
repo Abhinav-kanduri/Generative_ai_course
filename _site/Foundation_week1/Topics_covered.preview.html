@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topics Covered Preview</title>
+  <link rel="stylesheet" href="../assets/course-ui.css">
+</head>
+<body>
+  <main class="markdown-page">
+<h1 id="foundation-week-1-algorithm-insights">Foundation Week 1: Algorithm Insights</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="../README.html">Course home</a></li>
+<li><a href="README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Machine_Learning_Algorithms.html">Machine Learning algorithms</a></li>
+<li><a href="Natural_Language_Processing_Techniques.html">Natural Language Processing techniques</a></li>
+<li><a href="Deep_Learning_Algorithms.html">Deep Learning algorithms</a></li>
+<li><a href="Transformer_Architecture_End_to_End.html">Transformer architecture</a></li>
+<li><a href="Transformer_Model_Families.html">Transformer model families</a></li>
+</ul>
+<p>This file summarizes the topics covered in <strong>Algorithm Insights: A Problem-First Guide</strong>.</p>
+<p>The main idea is:</p>
+<blockquote>
+<p>Do not start by asking, "Which algorithm should I use?"</p>
+<p>Start by asking, "What problem am I solving?"</p>
+</blockquote>
+<p>Once the problem type is clear, choosing the right algorithm becomes much easier.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Core idea</li>
+<li>Machine learning algorithms</li>
+<li>Natural language processing techniques</li>
+<li>Deep learning architectures</li>
+<li>Why transformers are important</li>
+<li>Problem-to-algorithm guide</li>
+<li>Banking case study</li>
+<li>Simple interview rule</li>
+</ul>
+<h2 id="core-idea">Core Idea</h2>
+<p>Every algorithm is designed for a specific kind of problem.</p>
+<p>A good workflow is:</p>
+<ol>
+<li>Name the problem.</li>
+<li>Match it to the correct algorithm family.</li>
+<li>Choose the best algorithm based on the data and business need.</li>
+</ol>
+<p>Common problem families:</p>
+<ul>
+<li>Regression: predict a number.</li>
+<li>Classification: predict a category.</li>
+<li>Clustering: group similar items without labels.</li>
+<li>Anomaly detection: find unusual patterns.</li>
+<li>Natural language processing: understand human language.</li>
+<li>Deep learning: learn complex patterns from images, speech, text, and sequences.</li>
+<li>Generative AI: create new text, images, code, or other content.</li>
+</ul>
+<h2 id="machine-learning-algorithms">Machine Learning Algorithms</h2>
+<p>Machine learning is used for prediction, classification, grouping, feature reduction, pattern discovery, and anomaly detection.</p>
+<h3 id="prediction-and-boosting">Prediction and Boosting</h3>
+<ul>
+<li><strong>Linear Regression</strong></li>
+<li>Solves: Predicting a continuous number.</li>
+<li>
+<p>Used for: House prices, sales forecasting, revenue prediction.</p>
+</li>
+<li>
+<p><strong>Logistic Regression</strong></p>
+</li>
+<li>Solves: Predicting yes/no outcomes.</li>
+<li>
+<p>Used for: Fraud detection, churn prediction, loan approval.</p>
+</li>
+<li>
+<p><strong>Decision Tree</strong></p>
+</li>
+<li>Solves: Rule-based decision-making.</li>
+<li>
+<p>Used for: Segmentation, claim approval, risk decisions.</p>
+</li>
+<li>
+<p><strong>Random Forest</strong></p>
+</li>
+<li>Solves: Improving accuracy and reducing overfitting.</li>
+<li>
+<p>Used for: Credit scoring, fraud detection, medical prediction.</p>
+</li>
+<li>
+<p><strong>Gradient Boosting</strong></p>
+</li>
+<li>Solves: Correcting mistakes from earlier models.</li>
+<li>
+<p>Used for: Pricing, ranking, risk prediction.</p>
+</li>
+<li>
+<p><strong>XGBoost</strong></p>
+</li>
+<li>Solves: High-accuracy modeling on structured data.</li>
+<li>
+<p>Used for: Finance risk, fraud detection, machine learning competitions.</p>
+</li>
+<li>
+<p><strong>LightGBM</strong></p>
+</li>
+<li>Solves: Fast modeling on large structured datasets.</li>
+<li>
+<p>Used for: Large datasets and recommendation systems.</p>
+</li>
+<li>
+<p><strong>CatBoost</strong></p>
+</li>
+<li>Solves: Modeling data with many categorical features.</li>
+<li>Used for: Merchant prediction and retail offers.</li>
+</ul>
+<h3 id="classification-clustering-and-detection">Classification, Clustering, and Detection</h3>
+<ul>
+<li><strong>Support Vector Machine</strong></li>
+<li>Solves: Classification with clear boundaries.</li>
+<li>
+<p>Used for: Text classification and image classification.</p>
+</li>
+<li>
+<p><strong>K-Nearest Neighbors</strong></p>
+</li>
+<li>Solves: Similarity-based prediction.</li>
+<li>
+<p>Used for: Recommendations and user similarity.</p>
+</li>
+<li>
+<p><strong>Naive Bayes</strong></p>
+</li>
+<li>Solves: Fast text classification.</li>
+<li>
+<p>Used for: Spam detection and sentiment analysis.</p>
+</li>
+<li>
+<p><strong>K-Means Clustering</strong></p>
+</li>
+<li>Solves: Grouping data without labels.</li>
+<li>
+<p>Used for: Customer segmentation and merchant segmentation.</p>
+</li>
+<li>
+<p><strong>Hierarchical Clustering</strong></p>
+</li>
+<li>Solves: Discovering groups with hierarchy.</li>
+<li>
+<p>Used for: Market segmentation and document grouping.</p>
+</li>
+<li>
+<p><strong>Principal Component Analysis</strong></p>
+</li>
+<li>Solves: Reducing too many features.</li>
+<li>
+<p>Used for: Visualization and feature reduction.</p>
+</li>
+<li>
+<p><strong>Isolation Forest</strong></p>
+</li>
+<li>Solves: Detecting unusual data points.</li>
+<li>
+<p>Used for: Fraud detection and unusual transactions.</p>
+</li>
+<li>
+<p><strong>Association Rule Mining</strong></p>
+</li>
+<li>Solves: Discovering relationships between products.</li>
+<li>Used for: Market basket analysis.</li>
+</ul>
+<h2 id="natural-language-processing">Natural Language Processing</h2>
+<p>Natural Language Processing, or NLP, helps machines understand and work with human language.</p>
+<p>It is used for documents, emails, reviews, chats, transcripts, search queries, and customer feedback.</p>
+<h3 id="text-cleaning-and-representation">Text Cleaning and Representation</h3>
+<ul>
+<li><strong>Tokenization</strong></li>
+<li>Breaks text into smaller pieces.</li>
+<li>
+<p>Used in LLMs, search engines, and chatbots.</p>
+</li>
+<li>
+<p><strong>Stopword Removal</strong></p>
+</li>
+<li>Removes common low-value words.</li>
+<li>
+<p>Used in basic text cleaning.</p>
+</li>
+<li>
+<p><strong>Stemming</strong></p>
+</li>
+<li>Reduces words to rough root forms.</li>
+<li>
+<p>Used in search engines.</p>
+</li>
+<li>
+<p><strong>Lemmatization</strong></p>
+</li>
+<li>Converts words to proper base forms.</li>
+<li>
+<p>Used in document search and text analytics.</p>
+</li>
+<li>
+<p><strong>Bag of Words</strong></p>
+</li>
+<li>Converts text into word counts.</li>
+<li>
+<p>Used in basic text classification.</p>
+</li>
+<li>
+<p><strong>TF-IDF</strong></p>
+</li>
+<li>Finds important words in a document.</li>
+<li>
+<p>Used in search ranking and document matching.</p>
+</li>
+<li>
+<p><strong>Word2Vec</strong></p>
+</li>
+<li>Represents word meaning as vectors.</li>
+<li>
+<p>Used for semantic similarity and recommendations.</p>
+</li>
+<li>
+<p><strong>GloVe</strong></p>
+</li>
+<li>Creates meaning-based word vectors.</li>
+<li>
+<p>Used for text similarity and text understanding.</p>
+</li>
+<li>
+<p><strong>FastText</strong></p>
+</li>
+<li>Handles rare words and misspellings.</li>
+<li>Used in multilingual text processing.</li>
+</ul>
+<h3 id="understanding-and-generation">Understanding and Generation</h3>
+<ul>
+<li><strong>Named Entity Recognition</strong></li>
+<li>Extracts names, dates, locations, amounts, and other entities.</li>
+<li>
+<p>Used in information extraction.</p>
+</li>
+<li>
+<p><strong>Part-of-Speech Tagging</strong></p>
+</li>
+<li>Identifies grammar roles such as noun, verb, and adjective.</li>
+<li>
+<p>Used in language analysis.</p>
+</li>
+<li>
+<p><strong>Sentiment Analysis</strong></p>
+</li>
+<li>Detects emotion or opinion.</li>
+<li>
+<p>Used for reviews and customer feedback.</p>
+</li>
+<li>
+<p><strong>Topic Modeling</strong></p>
+</li>
+<li>Finds hidden topics in documents.</li>
+<li>
+<p>Used for news grouping and ticket clustering.</p>
+</li>
+<li>
+<p><strong>Text Classification</strong></p>
+</li>
+<li>Assigns a category to text.</li>
+<li>
+<p>Used for ticket routing and spam detection.</p>
+</li>
+<li>
+<p><strong>Text Summarization</strong></p>
+</li>
+<li>Converts long text into a shorter summary.</li>
+<li>
+<p>Used for legal, medical, and research documents.</p>
+</li>
+<li>
+<p><strong>Semantic Search</strong></p>
+</li>
+<li>Searches by meaning instead of exact keywords.</li>
+<li>
+<p>Used in RAG and enterprise search.</p>
+</li>
+<li>
+<p><strong>Question Answering</strong></p>
+</li>
+<li>Finds or generates answers from text.</li>
+<li>Used in chatbots and document assistants.</li>
+</ul>
+<h2 id="deep-learning-architectures">Deep Learning Architectures</h2>
+<p>Deep learning is useful for complex patterns in images, speech, language, time series, and generative AI.</p>
+<ul>
+<li><strong>Artificial Neural Network</strong></li>
+<li>Learns complex non-linear patterns.</li>
+<li>
+<p>Used for classification, prediction, and scoring.</p>
+</li>
+<li>
+<p><strong>Convolutional Neural Network</strong></p>
+</li>
+<li>Understands images.</li>
+<li>
+<p>Used for image classification and object detection.</p>
+</li>
+<li>
+<p><strong>Recurrent Neural Network</strong></p>
+</li>
+<li>Works with sequence data.</li>
+<li>
+<p>Used for time series, text, and speech.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory</strong></p>
+</li>
+<li>Remembers long sequence patterns.</li>
+<li>
+<p>Used for forecasting, speech, and language.</p>
+</li>
+<li>
+<p><strong>Gated Recurrent Unit</strong></p>
+</li>
+<li>Handles sequences with faster training.</li>
+<li>
+<p>Used for chatbots and time series.</p>
+</li>
+<li>
+<p><strong>Autoencoder</strong></p>
+</li>
+<li>Compresses data and detects anomalies.</li>
+<li>
+<p>Used for fraud detection, noise removal, and feature learning.</p>
+</li>
+<li>
+<p><strong>Generative Adversarial Network</strong></p>
+</li>
+<li>Generates synthetic data.</li>
+<li>
+<p>Used for image generation and data augmentation.</p>
+</li>
+<li>
+<p><strong>Transformer</strong></p>
+</li>
+<li>Understands and generates long-context content.</li>
+<li>
+<p>Used for LLMs, translation, and summarization.</p>
+</li>
+<li>
+<p><strong>BERT-style Model</strong></p>
+</li>
+<li>Performs deep text understanding.</li>
+<li>
+<p>Used for search, classification, and question answering.</p>
+</li>
+<li>
+<p><strong>GPT-style Model</strong></p>
+</li>
+<li>Generates text one token at a time.</li>
+<li>
+<p>Used for chatbots, content generation, and code generation.</p>
+</li>
+<li>
+<p><strong>Vision Transformer</strong></p>
+</li>
+<li>Uses attention for image understanding.</li>
+<li>
+<p>Used for image classification and document understanding.</p>
+</li>
+<li>
+<p><strong>Diffusion Model</strong></p>
+</li>
+<li>Generates high-quality images.</li>
+<li>Used for image generation and design tools.</li>
+</ul>
+<h2 id="why-transformers-matter">Why Transformers Matter</h2>
+<p>Transformers changed modern AI because they can look at the full sequence at once instead of reading one word at a time.</p>
+<p>Important ideas:</p>
+<ul>
+<li><strong>Self-attention:</strong> Each word can decide how much every other word matters for context.</li>
+<li><strong>Parallel reading:</strong> Long passages can be processed more efficiently.</li>
+<li><strong>Long context:</strong> Meaning can be carried across larger documents.</li>
+</ul>
+<p>Transformers power:</p>
+<ul>
+<li>Large language models</li>
+<li>Translation systems</li>
+<li>Summarization tools</li>
+<li>Semantic search</li>
+<li>Chatbots</li>
+<li>BERT-style models</li>
+<li>GPT-style models</li>
+</ul>
+<h2 id="problem-to-algorithm-guide">Problem-to-Algorithm Guide</h2>
+<p>Use this guide when choosing an algorithm.</p>
+<ul>
+<li><strong>Predict a number</strong></li>
+<li>
+<p>Use Linear Regression, Random Forest, or Gradient Boosting.</p>
+</li>
+<li>
+<p><strong>Predict yes/no</strong></p>
+</li>
+<li>
+<p>Use Logistic Regression, Decision Tree, Random Forest, or XGBoost.</p>
+</li>
+<li>
+<p><strong>Classify many categories</strong></p>
+</li>
+<li>
+<p>Use Logistic Regression, SVM, Random Forest, or Neural Network.</p>
+</li>
+<li>
+<p><strong>Group similar customers</strong></p>
+</li>
+<li>
+<p>Use K-Means or Hierarchical Clustering.</p>
+</li>
+<li>
+<p><strong>Detect fraud or anomalies</strong></p>
+</li>
+<li>
+<p>Use Isolation Forest, Autoencoder, Random Forest, or Gradient Boosting.</p>
+</li>
+<li>
+<p><strong>Recommend products</strong></p>
+</li>
+<li>
+<p>Use KNN, Matrix Factorization, Deep Learning, or Embeddings.</p>
+</li>
+<li>
+<p><strong>Understand text</strong></p>
+</li>
+<li>
+<p>Use TF-IDF, Word Embeddings, or Transformer.</p>
+</li>
+<li>
+<p><strong>Classify text</strong></p>
+</li>
+<li>
+<p>Use Naive Bayes, SVM, or BERT.</p>
+</li>
+<li>
+<p><strong>Summarize documents</strong></p>
+</li>
+<li>
+<p>Use Transformer or Large Language Models.</p>
+</li>
+<li>
+<p><strong>Build a chatbot</strong></p>
+</li>
+<li>
+<p>Use Transformer, GPT-style Model, or RAG.</p>
+</li>
+<li>
+<p><strong>Understand images</strong></p>
+</li>
+<li>
+<p>Use CNN or Vision Transformer.</p>
+</li>
+<li>
+<p><strong>Generate images</strong></p>
+</li>
+<li>
+<p>Use GAN or Diffusion Model.</p>
+</li>
+<li>
+<p><strong>Forecast future values</strong></p>
+</li>
+<li>Use Linear Regression, Random Forest, LSTM, or Transformer.</li>
+</ul>
+<h2 id="case-study-one-bank-five-problems">Case Study: One Bank, Five Problems</h2>
+<p>A single bank may need different algorithms for different business questions.</p>
+<ul>
+<li><strong>Question:</strong> Will this customer default on a loan?</li>
+<li>Problem type: Classification.</li>
+<li>
+<p>Algorithms: Logistic Regression, Random Forest, XGBoost.</p>
+</li>
+<li>
+<p><strong>Question:</strong> How much loan can they safely get?</p>
+</li>
+<li>Problem type: Number prediction.</li>
+<li>
+<p>Algorithms: Linear Regression, Gradient Boosting.</p>
+</li>
+<li>
+<p><strong>Question:</strong> Which customers behave similarly?</p>
+</li>
+<li>Problem type: Grouping.</li>
+<li>
+<p>Algorithms: K-Means, Hierarchical Clustering.</p>
+</li>
+<li>
+<p><strong>Question:</strong> Is this transaction suspicious?</p>
+</li>
+<li>Problem type: Anomaly detection.</li>
+<li>
+<p>Algorithms: Isolation Forest, Autoencoder, Random Forest.</p>
+</li>
+<li>
+<p><strong>Question:</strong> What is the customer saying?</p>
+</li>
+<li>Problem type: Text understanding.</li>
+<li>Algorithms: Named Entity Recognition, Sentiment Analysis, Transformer.</li>
+</ul>
+<h2 id="simple-rule-to-remember">Simple Rule to Remember</h2>
+<ul>
+<li>Regression means number prediction.</li>
+<li>Classification means category prediction.</li>
+<li>Clustering means grouping without labels.</li>
+<li>Anomaly detection means finding unusual patterns.</li>
+<li>NLP means text understanding.</li>
+<li>Deep learning means complex data learning and generation.</li>
+<li>Transformers mean context understanding and content generation.</li>
+</ul>
+<h2 id="interview-friendly-answer">Interview-Friendly Answer</h2>
+<p>When explaining your algorithm choice, say:</p>
+<blockquote>
+<p>I chose this algorithm because the business problem is a regression, classification, clustering, anomaly detection, text understanding, or generation problem.</p>
+</blockquote>
+<p>The strongest answer starts with the business problem and then connects it to the correct algorithm family.</p>
+  </main>
+</body>
+</html>

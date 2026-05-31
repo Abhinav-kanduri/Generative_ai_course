@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Branch Protection Setup | Generative AI Course</title>
+    <link rel="stylesheet" href="assets/course-ui.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Course navigation">
+        <a class="brand" href="index.html">Generative AI Course</a>
+        <div class="nav-links">
+          <a href="index.html#modules">Modules</a>
+          <a href="Foundation_week1/README.html">Foundation Week 1</a>
+          <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main class="markdown-page">
+<h1 id="main-branch-protection-setup">Main Branch Protection Setup</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="README.html">Course home</a></li>
+<li><a href="Foundation_week1/README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Foundation_week1/Topics_covered.html">Foundation Week 1 overview</a></li>
+<li><a href="Foundation_week1/Machine_Learning_Algorithms.html">Machine Learning algorithms</a></li>
+<li><a href="Foundation_week1/Natural_Language_Processing_Techniques.html">Natural Language Processing techniques</a></li>
+<li><a href="Foundation_week1/Deep_Learning_Algorithms.html">Deep Learning algorithms</a></li>
+<li><a href="Foundation_week1/Transformer_Architecture_End_to_End.html">Transformer architecture</a></li>
+<li><a href="Foundation_week1/Transformer_Model_Families.html">Transformer model families</a></li>
+</ul>
+<p>GitHub branch protection is controlled in the repository settings, not only by files in the repository.</p>
+<p>Use these settings to make sure no one can directly change the <code>main</code> branch except you as the repository admin.</p>
+<h2 id="1-update-codeowners">1. Update CODEOWNERS</h2>
+<p>Open this file:</p>
+<pre><code class="language-text">.github/CODEOWNERS
+</code></pre>
+<p>The CODEOWNERS file is already configured with:</p>
+<pre><code class="language-text">* @Abhinav-kanduri
+</code></pre>
+<h2 id="2-enable-github-pages">2. Enable GitHub Pages</h2>
+<p>In GitHub:</p>
+<ol>
+<li>Go to repository <strong>Settings</strong>.</li>
+<li>Open <strong>Pages</strong>.</li>
+<li>Under <strong>Build and deployment</strong>, select <strong>GitHub Actions</strong>.</li>
+<li>Save the setting.</li>
+</ol>
+<p>The workflow file is:</p>
+<pre><code class="language-text">.github/workflows/deploy.yml
+</code></pre>
+<p>It deploys the course notes when changes are pushed to <code>main</code>.</p>
+<h2 id="3-protect-the-main-branch">3. Protect the Main Branch</h2>
+<p>In GitHub:</p>
+<ol>
+<li>Go to repository <strong>Settings</strong>.</li>
+<li>Open <strong>Branches</strong>.</li>
+<li>Select <strong>Add branch protection rule</strong>.</li>
+<li>Set branch name pattern:</li>
+</ol>
+<pre><code class="language-text">main
+</code></pre>
+<p>Enable these options:</p>
+<ul>
+<li>Require a pull request before merging.</li>
+<li>Require approvals.</li>
+<li>Require review from Code Owners.</li>
+<li>Dismiss stale pull request approvals when new commits are pushed.</li>
+<li>Require status checks to pass before merging, if you add tests later.</li>
+<li>Require conversation resolution before merging.</li>
+<li>Do not allow bypassing the above settings unless you intentionally want admins to bypass.</li>
+<li>Restrict who can push to matching branches.</li>
+</ul>
+<p>For <strong>Restrict who can push to matching branches</strong>, add only your GitHub user.</p>
+<h2 id="4-recommended-admin-setting">4. Recommended Admin Setting</h2>
+<p>If you want absolutely no direct changes to <code>main</code>, even by admins, enable:</p>
+<pre><code class="language-text">Do not allow bypassing the above settings
+</code></pre>
+<p>If you want yourself as admin to be able to make emergency changes, leave admin bypass allowed, but restrict push access to only your GitHub username.</p>
+<h2 id="important-note">Important Note</h2>
+<p>The deployment workflow deploys the site.</p>
+<p>The branch protection settings protect <code>main</code>.</p>
+<p>Both are needed.</p>
+    </main>
+    <footer class="site-footer">
+      <p>Created by Abhinav Kanduri for knowledge transfer only.</p>
+      <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">Connect on LinkedIn</a>
+    </footer>
+  </body>
+</html>

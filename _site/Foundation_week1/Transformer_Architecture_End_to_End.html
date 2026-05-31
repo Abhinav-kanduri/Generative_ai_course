@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transformer Architecture End to End | Generative AI Course</title>
+    <link rel="stylesheet" href="../assets/course-ui.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Course navigation">
+        <a class="brand" href="../index.html">Generative AI Course</a>
+        <div class="nav-links">
+          <a href="../index.html#modules">Modules</a>
+          <a href="../Foundation_week1/README.html">Foundation Week 1</a>
+          <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main class="markdown-page">
+<h1 id="transformer-architecture-end-to-end">Transformer Architecture End to End</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="../README.html">Course home</a></li>
+<li><a href="README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Topics_covered.html">Foundation Week 1 overview</a></li>
+<li><a href="Machine_Learning_Algorithms.html">Machine Learning algorithms</a></li>
+<li><a href="Natural_Language_Processing_Techniques.html">Natural Language Processing techniques</a></li>
+<li><a href="Deep_Learning_Algorithms.html">Deep Learning algorithms</a></li>
+<li><a href="Transformer_Model_Families.html">Transformer model families</a></li>
+</ul>
+<p>This README explains <strong>Transformer architecture</strong> from the ground up:</p>
+<ul>
+<li>Why Transformers came into picture</li>
+<li>What problem they solved</li>
+<li>How the architecture works internally</li>
+<li>How encoder, decoder, and attention fit together</li>
+<li>Why Transformers became the foundation of Large Language Models</li>
+<li>Important research papers to know</li>
+</ul>
+<h2 id="1-why-transformers-came-into-picture">1. Why Transformers Came Into Picture</h2>
+<p>Before Transformers, most Natural Language Processing systems used recurrent or sequence-based models.</p>
+<p>Earlier architectures included:</p>
+<ul>
+<li><strong>Recurrent Neural Network</strong></li>
+<li>
+<p>Problem: Processes text word by word, so training is slow.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Network</strong></p>
+</li>
+<li>
+<p>Problem: Has better memory than a basic RNN, but still processes sequentially.</p>
+</li>
+<li>
+<p><strong>Gated Recurrent Unit</strong></p>
+</li>
+<li>
+<p>Problem: Faster than LSTM, but still struggles with very long context.</p>
+</li>
+<li>
+<p><strong>Sequence-to-sequence encoder-decoder models</strong></p>
+</li>
+<li>
+<p>Problem: Useful for translation, but compresses the whole input into limited hidden states.</p>
+</li>
+<li>
+<p><strong>Attention-based recurrent models</strong></p>
+</li>
+<li>Problem: Improved alignment, but still depended on recurrent sequential processing.</li>
+</ul>
+<p>The major problem was:</p>
+<blockquote>
+<p>Language is not always understood word by word. Sometimes one word depends on another word far away in the sentence.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote>
+<p>The customer cancelled the credit card because it was stolen.</p>
+</blockquote>
+<p>Here, the model must understand that <strong>it</strong> refers to <strong>credit card</strong>, not <strong>customer</strong>.</p>
+<p>Older RNN and LSTM models process tokens one after another. That makes them slower to train and weaker at capturing long-distance relationships.</p>
+<p>Attention mechanisms were introduced before Transformers to help models align important words during translation. Bahdanau attention showed that learning to align and translate improved neural machine translation compared with basic encoder-decoder approaches.</p>
+<p>The Transformer paper, <strong>Attention Is All You Need</strong>, introduced an architecture based only on attention mechanisms, removing recurrence and convolution entirely. This allowed models to process tokens more in parallel and capture relationships between words more directly.</p>
+<h2 id="2-simple-one-line-definition">2. Simple One-Line Definition</h2>
+<p>A <strong>Transformer</strong> is a deep learning architecture that understands relationships between tokens using <strong>self-attention</strong>, instead of reading a sentence only one word at a time.</p>
+<h2 id="3-what-problem-transformers-solved">3. What Problem Transformers Solved</h2>
+<p>Transformers solved several major problems from earlier architectures:</p>
+<ul>
+<li><strong>Sequential processing was slow</strong></li>
+<li>
+<p>Transformer solution: Process tokens in parallel during training.</p>
+</li>
+<li>
+<p><strong>Long sentences were difficult</strong></p>
+</li>
+<li>
+<p>Transformer solution: Self-attention connects every token with every other token.</p>
+</li>
+<li>
+<p><strong>Earlier models forgot far-away context</strong></p>
+</li>
+<li>
+<p>Transformer solution: Attention scores decide which tokens matter most.</p>
+</li>
+<li>
+<p><strong>Translation and summarization needed better alignment</strong></p>
+</li>
+<li>
+<p>Transformer solution: Encoder-decoder attention improves source-target alignment.</p>
+</li>
+<li>
+<p><strong>Scaling models was difficult</strong></p>
+</li>
+<li>Transformer solution: Transformer architecture scales well into Large Language Models.</li>
+</ul>
+<h2 id="4-transformer-architecture-end-to-end">4. Transformer Architecture End to End</h2>
+<p>The original Transformer has two major parts:</p>
+<ol>
+<li><strong>Encoder</strong></li>
+<li><strong>Decoder</strong></li>
+</ol>
+<p>The encoder understands the input sentence.</p>
+<p>The decoder generates the output sentence.</p>
+<p>Full flow:</p>
+<pre><code class="language-text">Input Sentence
+  v
+Tokenization
+  v
+Token Embeddings
+  v
+Positional Encoding
+  v
+Encoder Block 1
+  v
+Encoder Block 2
+  v
+Encoder Block N
+  v
+Decoder Block 1
+  v
+Decoder Block 2
+  v
+Decoder Block N
+  v
+Linear Layer
+  v
+Softmax
+  v
+Predicted Output Token
+</code></pre>
+<h2 id="5-example-sentence">5. Example Sentence</h2>
+<p>Example sentence:</p>
+<blockquote>
+<p>The customer reported that the card was stolen.</p>
+</blockquote>
+<p>The Transformer first breaks it into tokens:</p>
+<pre><code class="language-text">[&quot;The&quot;, &quot;customer&quot;, &quot;reported&quot;, &quot;that&quot;, &quot;the&quot;, &quot;card&quot;, &quot;was&quot;, &quot;stolen&quot;]
+</code></pre>
+<p>Then each token is converted into a numerical vector called an <strong>embedding</strong>.</p>
+<p>Embeddings capture meaning, but embeddings alone do not know word order. So the Transformer adds <strong>positional encoding</strong>.</p>
+<p>Without position:</p>
+<pre><code class="language-text">customer reported card stolen
+</code></pre>
+<p>With position:</p>
+<pre><code class="language-text">1-The
+2-customer
+3-reported
+4-that
+5-the
+6-card
+7-was
+8-stolen
+</code></pre>
+<p>This helps the model understand both:</p>
+<ol>
+<li>Meaning of each word</li>
+<li>Position of each word in the sentence</li>
+</ol>
+<h2 id="6-core-component-self-attention">6. Core Component: Self-Attention</h2>
+<p>Self-attention answers one important question:</p>
+<blockquote>
+<p>For each token, which other tokens in the sentence are important?</p>
+</blockquote>
+<p>Example:</p>
+<blockquote>
+<p>The customer reported that the card was stolen.</p>
+</blockquote>
+<p>When the model looks at the word <strong>stolen</strong>, it should pay more attention to:</p>
+<pre><code class="language-text">card
+reported
+customer
+</code></pre>
+<p>It should pay less attention to:</p>
+<pre><code class="language-text">the
+that
+was
+</code></pre>
+<p>Self-attention gives different importance scores to different words.</p>
+<p>The core attention formula from the Transformer is:</p>
+<pre><code class="language-text">Attention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V
+</code></pre>
+<p>Meaning of each term:</p>
+<ul>
+<li><strong>Query</strong></li>
+<li>
+<p>What the current token is looking for.</p>
+</li>
+<li>
+<p><strong>Key</strong></p>
+</li>
+<li>
+<p>What each token offers.</p>
+</li>
+<li>
+<p><strong>Value</strong></p>
+</li>
+<li>
+<p>The actual information carried by each token.</p>
+</li>
+<li>
+<p><strong>Softmax</strong></p>
+</li>
+<li>Converts scores into attention weights.</li>
+</ul>
+<p>Simple meaning:</p>
+<blockquote>
+<p>Query asks a question, Key checks relevance, and Value provides the information.</p>
+</blockquote>
+<h2 id="7-query-key-and-value-example">7. Query, Key, and Value Example</h2>
+<p>Sentence:</p>
+<blockquote>
+<p>The card was stolen.</p>
+</blockquote>
+<p>For the word <strong>stolen</strong>:</p>
+<ul>
+<li><strong>Query</strong></li>
+<li>
+<p>"What thing was stolen?"</p>
+</li>
+<li>
+<p><strong>Key</strong></p>
+</li>
+<li>
+<p>Each word says, "I may be relevant."</p>
+</li>
+<li>
+<p><strong>Value</strong></p>
+</li>
+<li>
+<p>The actual meaning of each word.</p>
+</li>
+<li>
+<p><strong>Strong attention</strong></p>
+</li>
+<li>
+<p>card</p>
+</li>
+<li>
+<p><strong>Weak attention</strong></p>
+</li>
+<li>the</li>
+<li>was</li>
+</ul>
+<p>So the model learns that <strong>stolen</strong> is strongly connected to <strong>card</strong>.</p>
+<h2 id="8-multi-head-attention">8. Multi-Head Attention</h2>
+<p>One attention head may focus on grammar.</p>
+<p>Another attention head may focus on meaning.</p>
+<p>Another attention head may focus on entity relationships.</p>
+<p>Example sentence:</p>
+<blockquote>
+<p>The customer reported that the card was stolen.</p>
+</blockquote>
+<p>Possible attention heads:</p>
+<ul>
+<li><strong>Head 1</strong></li>
+<li>
+<p>Focus: Subject, such as customer.</p>
+</li>
+<li>
+<p><strong>Head 2</strong></p>
+</li>
+<li>
+<p>Focus: Object, such as card.</p>
+</li>
+<li>
+<p><strong>Head 3</strong></p>
+</li>
+<li>
+<p>Focus: Event, such as stolen.</p>
+</li>
+<li>
+<p><strong>Head 4</strong></p>
+</li>
+<li>Focus: Relationship between card and stolen.</li>
+</ul>
+<p>This is why it is called <strong>multi-head attention</strong>.</p>
+<p>Instead of learning only one relationship pattern, the Transformer learns many relationship patterns at the same time.</p>
+<h2 id="9-encoder-block">9. Encoder Block</h2>
+<p>The encoder is responsible for understanding the input.</p>
+<p>Each encoder block follows this flow:</p>
+<pre><code class="language-text">Input
+  v
+Multi-Head Self-Attention
+  v
+Add and Normalize
+  v
+Feed-Forward Neural Network
+  v
+Add and Normalize
+  v
+Encoder Output
+</code></pre>
+<p>Encoder responsibilities:</p>
+<ul>
+<li><strong>Self-attention</strong></li>
+<li>
+<p>Understand relationships between words.</p>
+</li>
+<li>
+<p><strong>Add and normalize</strong></p>
+</li>
+<li>
+<p>Stabilize training.</p>
+</li>
+<li>
+<p><strong>Feed-forward network</strong></p>
+</li>
+<li>
+<p>Learn deeper transformations.</p>
+</li>
+<li>
+<p><strong>Stacked encoder layers</strong></p>
+</li>
+<li>Build deeper understanding.</li>
+</ul>
+<p>In models like <strong>BERT</strong>, the encoder is used to deeply understand text by looking at both left and right context. The BERT paper introduced deep bidirectional Transformer pretraining for language understanding tasks.</p>
+<h2 id="10-decoder-block">10. Decoder Block</h2>
+<p>The decoder generates output one token at a time.</p>
+<p>Each decoder block follows this flow:</p>
+<pre><code class="language-text">Previous Output Tokens
+  v
+Masked Multi-Head Self-Attention
+  v
+Add and Normalize
+  v
+Encoder-Decoder Attention
+  v
+Add and Normalize
+  v
+Feed-Forward Neural Network
+  v
+Add and Normalize
+  v
+Decoder Output
+</code></pre>
+<h2 id="11-why-masked-attention-is-needed">11. Why Masked Attention Is Needed</h2>
+<p>During generation, the model should not see future words.</p>
+<p>Example:</p>
+<blockquote>
+<p>The card was ___</p>
+</blockquote>
+<p>The model should predict <strong>stolen</strong> without already seeing the word <strong>stolen</strong>.</p>
+<p>So masked self-attention hides future tokens.</p>
+<p>This is the foundation of decoder-only models like GPT-style language models. GPT-2 used a large Transformer language model trained on WebText and showed strong zero-shot behavior across language modeling tasks.</p>
+<h2 id="12-encoder-only-decoder-only-and-encoder-decoder-transformers">12. Encoder-Only, Decoder-Only, and Encoder-Decoder Transformers</h2>
+<p>Modern Transformer models come in three major types.</p>
+<h3 id="encoder-only-transformers">Encoder-Only Transformers</h3>
+<p>Examples:</p>
+<ul>
+<li>BERT-style models</li>
+</ul>
+<p>Best for:</p>
+<ul>
+<li>Text classification</li>
+<li>Sentiment analysis</li>
+<li>Entity extraction</li>
+<li>Semantic search</li>
+</ul>
+<p>How they work:</p>
+<ul>
+<li>Read the full input.</li>
+<li>Understand context from both left and right sides.</li>
+<li>Produce representations useful for understanding tasks.</li>
+</ul>
+<h3 id="decoder-only-transformers">Decoder-Only Transformers</h3>
+<p>Examples:</p>
+<ul>
+<li>GPT-style models</li>
+</ul>
+<p>Best for:</p>
+<ul>
+<li>Chatbots</li>
+<li>Text generation</li>
+<li>Code generation</li>
+<li>Next-token prediction</li>
+</ul>
+<p>How they work:</p>
+<ul>
+<li>Generate text one token at a time.</li>
+<li>Use masked attention so future tokens are hidden.</li>
+</ul>
+<h3 id="encoder-decoder-transformers">Encoder-Decoder Transformers</h3>
+<p>Examples:</p>
+<ul>
+<li>Text-to-Text Transfer Transformer, or T5</li>
+</ul>
+<p>Best for:</p>
+<ul>
+<li>Translation</li>
+<li>Summarization</li>
+<li>Question answering</li>
+</ul>
+<p>How they work:</p>
+<ul>
+<li>Encoder understands the input.</li>
+<li>Decoder generates the output.</li>
+</ul>
+<p>The T5 paper unified many NLP tasks into a text-to-text format, covering summarization, question answering, classification, and more.</p>
+<h2 id="13-end-to-end-transformer-flow-with-example">13. End-to-End Transformer Flow With Example</h2>
+<p>Task:</p>
+<blockquote>
+<p>Translate "I love machine learning" into another language.</p>
+</blockquote>
+<p>Step-by-step flow:</p>
+<pre><code class="language-text">Input:
+&quot;I love machine learning&quot;
+
+Step 1: Tokenization
+[&quot;I&quot;, &quot;love&quot;, &quot;machine&quot;, &quot;learning&quot;]
+
+Step 2: Embeddings
+Each token becomes a vector.
+
+Step 3: Positional Encoding
+The model learns token order.
+
+Step 4: Encoder Self-Attention
+Each word attends to other words.
+&quot;machine&quot; attends to &quot;learning&quot;.
+&quot;love&quot; attends to &quot;I&quot;.
+
+Step 5: Encoder Output
+The input sentence meaning is represented.
+
+Step 6: Decoder Starts
+The decoder begins with a start token.
+
+Step 7: Masked Self-Attention
+The decoder predicts one word at a time.
+
+Step 8: Encoder-Decoder Attention
+The decoder looks back at encoder output.
+
+Step 9: Softmax
+The model chooses the most probable next word.
+
+Step 10: Final Output
+The translated sentence is generated.
+</code></pre>
+<h2 id="14-why-transformers-became-the-foundation-of-large-language-models">14. Why Transformers Became the Foundation of Large Language Models</h2>
+<p>Transformers became the foundation of modern AI because they are:</p>
+<ul>
+<li><strong>Parallelizable</strong></li>
+<li>
+<p>Faster to train compared with recurrent models.</p>
+</li>
+<li>
+<p><strong>Scalable</strong></p>
+</li>
+<li>
+<p>Can be trained with large datasets and large parameter counts.</p>
+</li>
+<li>
+<p><strong>Context-aware</strong></p>
+</li>
+<li>
+<p>Every token can attend to every other token.</p>
+</li>
+<li>
+<p><strong>Flexible</strong></p>
+</li>
+<li>
+<p>Works for text, images, audio, video, code, and multimodal data.</p>
+</li>
+<li>
+<p><strong>Transferable</strong></p>
+</li>
+<li>Can be pretrained once and then fine-tuned or prompted for many tasks.</li>
+</ul>
+<p>This is why Transformer architecture became the foundation for:</p>
+<ul>
+<li>BERT-style models</li>
+<li>GPT-style models</li>
+<li>T5</li>
+<li>Transformer-XL</li>
+<li>Longformer</li>
+<li>Vision Transformer</li>
+<li>Modern Large Language Models</li>
+</ul>
+<h2 id="15-important-research-papers-on-transformers">15. Important Research Papers on Transformers</h2>
+<h3 id="foundational-papers">Foundational Papers</h3>
+<ul>
+<li><strong>Neural Machine Translation by Jointly Learning to Align and Translate</strong></li>
+<li>Why it matters: Introduced attention-based alignment for translation before Transformers.</li>
+<li>
+<p>Link: https://arxiv.org/abs/1409.0473</p>
+</li>
+<li>
+<p><strong>Attention Is All You Need</strong></p>
+</li>
+<li>Why it matters: Introduced the Transformer architecture and removed recurrence and convolution.</li>
+<li>
+<p>Link: https://arxiv.org/abs/1706.03762</p>
+</li>
+<li>
+<p><strong>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</strong></p>
+</li>
+<li>Why it matters: Popularized encoder-only Transformers for language understanding.</li>
+<li>
+<p>Link: https://arxiv.org/abs/1810.04805</p>
+</li>
+<li>
+<p><strong>Language Models are Unsupervised Multitask Learners</strong></p>
+</li>
+<li>Why it matters: Showed strong decoder-only Transformer language modeling and zero-shot behavior.</li>
+<li>
+<p>Link: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf</p>
+</li>
+<li>
+<p><strong>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</strong></p>
+</li>
+<li>Why it matters: Unified many NLP tasks into a text-to-text format.</li>
+<li>Link: https://arxiv.org/abs/1910.10683</li>
+</ul>
+<h3 id="advanced-transformer-papers">Advanced Transformer Papers</h3>
+<ul>
+<li><strong>Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context</strong></li>
+<li>Main contribution: Added segment-level recurrence and improved long-context language modeling.</li>
+<li>
+<p>Link: https://arxiv.org/abs/1901.02860</p>
+</li>
+<li>
+<p><strong>Longformer: The Long-Document Transformer</strong></p>
+</li>
+<li>Main contribution: Introduced attention that scales linearly for long documents.</li>
+<li>
+<p>Link: https://arxiv.org/abs/2004.05150</p>
+</li>
+<li>
+<p><strong>An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</strong></p>
+</li>
+<li>Main contribution: Applied pure Transformer architecture to image patches for computer vision.</li>
+<li>Link: https://arxiv.org/abs/2010.11929</li>
+</ul>
+<p>Transformer-XL addressed fixed-length context limitations using segment-level recurrence and new positional encoding.</p>
+<p>Longformer addressed the quadratic cost of self-attention for long documents using local and global attention patterns.</p>
+<p>Vision Transformer showed that a pure Transformer could work well for image classification by treating image patches like tokens.</p>
+<h2 id="16-best-interview-explanation">16. Best Interview Explanation</h2>
+<p>You can explain Transformers like this:</p>
+<blockquote>
+<p>Transformers came into picture because earlier RNN and LSTM models processed text sequentially, which made training slow and made it difficult to capture long-range dependencies. The Transformer solved this by using self-attention, where every token can directly attend to every other token in the sentence. This allows the model to understand context better and train more efficiently in parallel.</p>
+<p>The architecture starts with tokenization, then token embeddings and positional encodings are added. The encoder uses multi-head self-attention and feed-forward layers to understand the input. The decoder uses masked self-attention, encoder-decoder attention, and feed-forward layers to generate output one token at a time. This architecture became the foundation for modern Large Language Models, including encoder-only models like BERT, decoder-only models like GPT-style systems, and encoder-decoder models like T5.</p>
+</blockquote>
+<h2 id="17-simple-memory-trick">17. Simple Memory Trick</h2>
+<p>Remember Transformer using this flow:</p>
+<pre><code class="language-text">Tokens
+  v
+Embeddings
+  v
+Position
+  v
+Attention
+  v
+Multi-Head Attention
+  v
+Feed-Forward Network
+  v
+Encoder or Decoder
+  v
+Softmax
+  v
+Output
+</code></pre>
+<p>Remember why Transformers came:</p>
+<pre><code class="language-text">Recurrent models were slow and struggled with long context.
+Transformers used attention to understand all token relationships directly.
+</code></pre>
+<p>The most important paper to start with is <strong>Attention Is All You Need</strong>, because it is the original Transformer paper and the base for most modern Large Language Model architectures.</p>
+<h2 id="quick-revision-notes">Quick Revision Notes</h2>
+<ul>
+<li>Transformer is based on attention, not recurrence.</li>
+<li>Self-attention compares every token with every other token.</li>
+<li>Multi-head attention learns different types of relationships at the same time.</li>
+<li>Positional encoding gives the model word order.</li>
+<li>Encoder understands input.</li>
+<li>Decoder generates output.</li>
+<li>Masked attention prevents the decoder from seeing future tokens.</li>
+<li>Encoder-only models are best for understanding.</li>
+<li>Decoder-only models are best for generation.</li>
+<li>Encoder-decoder models are best for transformation tasks like translation and summarization.</li>
+</ul>
+    </main>
+    <footer class="site-footer">
+      <p>Created by Abhinav Kanduri for knowledge transfer only.</p>
+      <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">Connect on LinkedIn</a>
+    </footer>
+  </body>
+</html>

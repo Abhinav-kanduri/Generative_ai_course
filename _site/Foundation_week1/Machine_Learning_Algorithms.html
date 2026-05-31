@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Machine Learning Algorithms by Category | Generative AI Course</title>
+    <link rel="stylesheet" href="../assets/course-ui.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Course navigation">
+        <a class="brand" href="../index.html">Generative AI Course</a>
+        <div class="nav-links">
+          <a href="../index.html#modules">Modules</a>
+          <a href="../Foundation_week1/README.html">Foundation Week 1</a>
+          <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main class="markdown-page">
+<h1 id="machine-learning-algorithms-by-category">Machine Learning Algorithms by Category</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="../README.html">Course home</a></li>
+<li><a href="README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Topics_covered.html">Foundation Week 1 overview</a></li>
+<li><a href="Natural_Language_Processing_Techniques.html">Natural Language Processing techniques</a></li>
+<li><a href="Deep_Learning_Algorithms.html">Deep Learning algorithms</a></li>
+<li><a href="Transformer_Architecture_End_to_End.html">Transformer architecture</a></li>
+<li><a href="Transformer_Model_Families.html">Transformer model families</a></li>
+</ul>
+<p>This README organizes common machine learning algorithms by problem type. Use it as a quick reference when deciding which algorithm family fits a project, assignment, or interview question.</p>
+<h2 id="how-to-choose-an-algorithm">How to Choose an Algorithm</h2>
+<p>Start with the problem:</p>
+<ol>
+<li>Are you predicting a number?</li>
+<li>Are you predicting a class or category?</li>
+<li>Are you grouping similar data points?</li>
+<li>Are you reducing features?</li>
+<li>Are you detecting unusual behavior?</li>
+<li>Are you working with text, images, time series, or rewards?</li>
+</ol>
+<p>Once the problem is clear, choose from the matching algorithm category.</p>
+<h2 id="1-supervised-learning">1. Supervised Learning</h2>
+<p>Supervised learning algorithms learn from labeled data. The dataset already contains input features and the correct output.</p>
+<h3 id="regression-algorithms">Regression Algorithms</h3>
+<p>Use regression when the output is a continuous value, such as price, salary, revenue, or temperature.</p>
+<ul>
+<li><strong>Linear Regression</strong></li>
+<li>
+<p>Used for predicting continuous values like price, salary, and sales.</p>
+</li>
+<li>
+<p><strong>Polynomial Regression</strong></p>
+</li>
+<li>
+<p>Used for non-linear continuous prediction.</p>
+</li>
+<li>
+<p><strong>Ridge Regression</strong></p>
+</li>
+<li>
+<p>Used for regression with regularization to reduce overfitting.</p>
+</li>
+<li>
+<p><strong>Lasso Regression</strong></p>
+</li>
+<li>
+<p>Used for feature selection and regularized regression.</p>
+</li>
+<li>
+<p><strong>Elastic Net Regression</strong></p>
+</li>
+<li>
+<p>Used when combining Ridge and Lasso regularization.</p>
+</li>
+<li>
+<p><strong>Decision Tree Regression</strong></p>
+</li>
+<li>
+<p>Used for rule-based prediction of continuous values.</p>
+</li>
+<li>
+<p><strong>Random Forest Regression</strong></p>
+</li>
+<li>
+<p>Used for more accurate regression using multiple trees.</p>
+</li>
+<li>
+<p><strong>Gradient Boosting Regression</strong></p>
+</li>
+<li>
+<p>Used for strong predictive regression models.</p>
+</li>
+<li>
+<p><strong>XGBoost Regression</strong></p>
+</li>
+<li>
+<p>Used for high-performance boosting regression.</p>
+</li>
+<li>
+<p><strong>LightGBM Regression</strong></p>
+</li>
+<li>
+<p>Used for fast boosting on large datasets.</p>
+</li>
+<li>
+<p><strong>CatBoost Regression</strong></p>
+</li>
+<li>
+<p>Used when the dataset has many categorical features.</p>
+</li>
+<li>
+<p><strong>Support Vector Regression</strong></p>
+</li>
+<li>
+<p>Used for regression with support vector machines.</p>
+</li>
+<li>
+<p><strong>K-Nearest Neighbors Regression</strong></p>
+</li>
+<li>
+<p>Used for prediction based on nearby data points.</p>
+</li>
+<li>
+<p><strong>Neural Network Regression</strong></p>
+</li>
+<li>Used for deep learning-based continuous prediction.</li>
+</ul>
+<h3 id="classification-algorithms">Classification Algorithms</h3>
+<p>Use classification when the output is a class or category, such as yes/no, spam/not spam, approved/rejected, or fraud/not fraud.</p>
+<ul>
+<li><strong>Logistic Regression</strong></li>
+<li>
+<p>Used for binary classification.</p>
+</li>
+<li>
+<p><strong>Decision Tree Classifier</strong></p>
+</li>
+<li>
+<p>Used for rule-based classification.</p>
+</li>
+<li>
+<p><strong>Random Forest Classifier</strong></p>
+</li>
+<li>
+<p>Used for classification using multiple decision trees.</p>
+</li>
+<li>
+<p><strong>Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Used for classification with margin separation.</p>
+</li>
+<li>
+<p><strong>K-Nearest Neighbors Classifier</strong></p>
+</li>
+<li>
+<p>Used for classification based on nearby examples.</p>
+</li>
+<li>
+<p><strong>Naive Bayes</strong></p>
+</li>
+<li>
+<p>Used for text classification and spam detection.</p>
+</li>
+<li>
+<p><strong>Gradient Boosting Classifier</strong></p>
+</li>
+<li>
+<p>Used for high-accuracy classification.</p>
+</li>
+<li>
+<p><strong>XGBoost Classifier</strong></p>
+</li>
+<li>
+<p>Used for advanced boosting classification.</p>
+</li>
+<li>
+<p><strong>LightGBM Classifier</strong></p>
+</li>
+<li>
+<p>Used for fast and scalable classification.</p>
+</li>
+<li>
+<p><strong>CatBoost Classifier</strong></p>
+</li>
+<li>
+<p>Used for classification with categorical data.</p>
+</li>
+<li>
+<p><strong>AdaBoost Classifier</strong></p>
+</li>
+<li>
+<p>Used for boosting weak models into stronger models.</p>
+</li>
+<li>
+<p><strong>Linear Discriminant Analysis</strong></p>
+</li>
+<li>
+<p>Used for classification and dimensionality reduction.</p>
+</li>
+<li>
+<p><strong>Quadratic Discriminant Analysis</strong></p>
+</li>
+<li>
+<p>Used for classification with non-linear boundaries.</p>
+</li>
+<li>
+<p><strong>Neural Network Classifier</strong></p>
+</li>
+<li>
+<p>Used for complex classification problems.</p>
+</li>
+<li>
+<p><strong>Multilayer Perceptron</strong></p>
+</li>
+<li>Used for feed-forward neural network classification.</li>
+</ul>
+<h2 id="2-unsupervised-learning">2. Unsupervised Learning</h2>
+<p>Unsupervised learning algorithms find patterns in unlabeled data.</p>
+<h3 id="clustering-algorithms">Clustering Algorithms</h3>
+<p>Use clustering when you want to group similar data points without predefined labels.</p>
+<ul>
+<li><strong>K-Means Clustering</strong></li>
+<li>
+<p>Used for customer segmentation and grouping similar data.</p>
+</li>
+<li>
+<p><strong>Hierarchical Clustering</strong></p>
+</li>
+<li>
+<p>Used for tree-based grouping.</p>
+</li>
+<li>
+<p><strong>DBSCAN</strong></p>
+</li>
+<li>
+<p>Used for density-based clustering and outlier detection.</p>
+</li>
+<li>
+<p><strong>Mean Shift Clustering</strong></p>
+</li>
+<li>
+<p>Used for finding natural clusters.</p>
+</li>
+<li>
+<p><strong>Gaussian Mixture Model</strong></p>
+</li>
+<li>
+<p>Used for probabilistic clustering.</p>
+</li>
+<li>
+<p><strong>Agglomerative Clustering</strong></p>
+</li>
+<li>
+<p>Used for bottom-up hierarchical clustering.</p>
+</li>
+<li>
+<p><strong>Spectral Clustering</strong></p>
+</li>
+<li>
+<p>Used for graph-based clustering.</p>
+</li>
+<li>
+<p><strong>BIRCH</strong></p>
+</li>
+<li>
+<p>Used for large-scale clustering.</p>
+</li>
+<li>
+<p><strong>Affinity Propagation</strong></p>
+</li>
+<li>Used for finding representative examples.</li>
+</ul>
+<h3 id="dimensionality-reduction-algorithms">Dimensionality Reduction Algorithms</h3>
+<p>Use dimensionality reduction when the dataset has too many features and you want to simplify it while keeping useful information.</p>
+<ul>
+<li><strong>Principal Component Analysis</strong></li>
+<li>
+<p>Used for reducing features while keeping important information.</p>
+</li>
+<li>
+<p><strong>Linear Discriminant Analysis</strong></p>
+</li>
+<li>
+<p>Used for reducing dimensions for classification.</p>
+</li>
+<li>
+<p><strong>t-SNE</strong></p>
+</li>
+<li>
+<p>Used for visualizing high-dimensional data.</p>
+</li>
+<li>
+<p><strong>UMAP</strong></p>
+</li>
+<li>
+<p>Used for fast visualization and dimensionality reduction.</p>
+</li>
+<li>
+<p><strong>Autoencoders</strong></p>
+</li>
+<li>
+<p>Used for neural network-based compression.</p>
+</li>
+<li>
+<p><strong>Factor Analysis</strong></p>
+</li>
+<li>
+<p>Used for finding hidden factors.</p>
+</li>
+<li>
+<p><strong>Independent Component Analysis</strong></p>
+</li>
+<li>Used for separating independent signals.</li>
+</ul>
+<h3 id="association-rule-learning">Association Rule Learning</h3>
+<p>Use association rule learning when you want to find relationships between items.</p>
+<ul>
+<li><strong>Apriori Algorithm</strong></li>
+<li>
+<p>Used for market basket analysis.</p>
+</li>
+<li>
+<p><strong>FP-Growth</strong></p>
+</li>
+<li>
+<p>Used for faster frequent itemset mining.</p>
+</li>
+<li>
+<p><strong>Eclat Algorithm</strong></p>
+</li>
+<li>Used for association rule mining.</li>
+</ul>
+<h2 id="3-semi-supervised-learning">3. Semi-Supervised Learning</h2>
+<p>Semi-supervised learning is useful when only a small part of the dataset is labeled and most of the data is unlabeled.</p>
+<ul>
+<li><strong>Self-Training</strong></li>
+<li>
+<p>Used when a model labels unlabeled data and retrains itself.</p>
+</li>
+<li>
+<p><strong>Label Propagation</strong></p>
+</li>
+<li>
+<p>Used for spreading labels through similar data points.</p>
+</li>
+<li>
+<p><strong>Label Spreading</strong></p>
+</li>
+<li>
+<p>Used like label propagation, but with regularization.</p>
+</li>
+<li>
+<p><strong>Semi-Supervised Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Used for classification with limited labels.</p>
+</li>
+<li>
+<p><strong>Pseudo Labeling</strong></p>
+</li>
+<li>Used for assigning predicted labels to unlabeled data.</li>
+</ul>
+<h2 id="4-reinforcement-learning">4. Reinforcement Learning</h2>
+<p>Reinforcement learning is used when an agent learns by taking actions and receiving rewards.</p>
+<ul>
+<li><strong>Q-Learning</strong></li>
+<li>
+<p>Used for learning the best action strategy.</p>
+</li>
+<li>
+<p><strong>Deep Q-Network</strong></p>
+</li>
+<li>
+<p>Used for reinforcement learning with neural networks.</p>
+</li>
+<li>
+<p><strong>SARSA</strong></p>
+</li>
+<li>
+<p>Used for action-value learning.</p>
+</li>
+<li>
+<p><strong>Policy Gradient</strong></p>
+</li>
+<li>
+<p>Used for learning policies directly.</p>
+</li>
+<li>
+<p><strong>Actor-Critic</strong></p>
+</li>
+<li>
+<p>Used for combining value learning and policy learning.</p>
+</li>
+<li>
+<p><strong>Proximal Policy Optimization</strong></p>
+</li>
+<li>
+<p>Used for stable reinforcement learning training.</p>
+</li>
+<li>
+<p><strong>Advantage Actor-Critic</strong></p>
+</li>
+<li>
+<p>Used for policy optimization.</p>
+</li>
+<li>
+<p><strong>Deep Deterministic Policy Gradient</strong></p>
+</li>
+<li>
+<p>Used for continuous action problems.</p>
+</li>
+<li>
+<p><strong>Monte Carlo Methods</strong></p>
+</li>
+<li>
+<p>Used for learning from complete episodes.</p>
+</li>
+<li>
+<p><strong>Temporal Difference Learning</strong></p>
+</li>
+<li>Used for learning from partial experience.</li>
+</ul>
+<h2 id="5-ensemble-learning">5. Ensemble Learning</h2>
+<p>Ensemble learning combines multiple models to improve accuracy, stability, and generalization.</p>
+<ul>
+<li><strong>Bagging</strong></li>
+<li>
+<p>Used for reducing variance.</p>
+</li>
+<li>
+<p><strong>Random Forest</strong></p>
+</li>
+<li>
+<p>Used for bagging with decision trees.</p>
+</li>
+<li>
+<p><strong>AdaBoost</strong></p>
+</li>
+<li>
+<p>Used for boosting weak learners.</p>
+</li>
+<li>
+<p><strong>Gradient Boosting</strong></p>
+</li>
+<li>
+<p>Used for sequential error correction.</p>
+</li>
+<li>
+<p><strong>XGBoost</strong></p>
+</li>
+<li>
+<p>Used for optimized gradient boosting.</p>
+</li>
+<li>
+<p><strong>LightGBM</strong></p>
+</li>
+<li>
+<p>Used for fast boosting on large data.</p>
+</li>
+<li>
+<p><strong>CatBoost</strong></p>
+</li>
+<li>
+<p>Used for boosting with categorical feature handling.</p>
+</li>
+<li>
+<p><strong>Voting Classifier</strong></p>
+</li>
+<li>
+<p>Used for combining multiple models by voting.</p>
+</li>
+<li>
+<p><strong>Stacking</strong></p>
+</li>
+<li>
+<p>Used for combining models using another model.</p>
+</li>
+<li>
+<p><strong>Blending</strong></p>
+</li>
+<li>Used like stacking, but with validation data.</li>
+</ul>
+<h2 id="6-deep-learning">6. Deep Learning</h2>
+<p>Deep learning algorithms use neural networks to model complex patterns.</p>
+<ul>
+<li><strong>Artificial Neural Network</strong></li>
+<li>
+<p>Used for general prediction and classification.</p>
+</li>
+<li>
+<p><strong>Convolutional Neural Network</strong></p>
+</li>
+<li>
+<p>Used for image processing and computer vision.</p>
+</li>
+<li>
+<p><strong>Recurrent Neural Network</strong></p>
+</li>
+<li>
+<p>Used for sequential data.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Network</strong></p>
+</li>
+<li>
+<p>Used for time series and language data.</p>
+</li>
+<li>
+<p><strong>Gated Recurrent Unit</strong></p>
+</li>
+<li>
+<p>Used for faster sequence modeling.</p>
+</li>
+<li>
+<p><strong>Transformer</strong></p>
+</li>
+<li>
+<p>Used for Large Language Models and modern Natural Language Processing.</p>
+</li>
+<li>
+<p><strong>Autoencoder</strong></p>
+</li>
+<li>
+<p>Used for feature compression and anomaly detection.</p>
+</li>
+<li>
+<p><strong>Variational Autoencoder</strong></p>
+</li>
+<li>
+<p>Used for generative modeling.</p>
+</li>
+<li>
+<p><strong>Generative Adversarial Network</strong></p>
+</li>
+<li>
+<p>Used for image generation.</p>
+</li>
+<li>
+<p><strong>Graph Neural Network</strong></p>
+</li>
+<li>
+<p>Used for graph-based data such as social networks.</p>
+</li>
+<li>
+<p><strong>Siamese Network</strong></p>
+</li>
+<li>
+<p>Used for similarity matching.</p>
+</li>
+<li>
+<p><strong>Diffusion Model</strong></p>
+</li>
+<li>Used for image and media generation.</li>
+</ul>
+<h2 id="7-natural-language-processing-algorithms">7. Natural Language Processing Algorithms</h2>
+<p>NLP algorithms are used for text, language, and document understanding.</p>
+<ul>
+<li><strong>Naive Bayes</strong></li>
+<li>
+<p>Used for spam detection and sentiment analysis.</p>
+</li>
+<li>
+<p><strong>Logistic Regression</strong></p>
+</li>
+<li>
+<p>Used for text classification.</p>
+</li>
+<li>
+<p><strong>Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Used for document classification.</p>
+</li>
+<li>
+<p><strong>Conditional Random Field</strong></p>
+</li>
+<li>
+<p>Used for Named Entity Recognition.</p>
+</li>
+<li>
+<p><strong>Hidden Markov Model</strong></p>
+</li>
+<li>
+<p>Used for sequence tagging.</p>
+</li>
+<li>
+<p><strong>Word2Vec</strong></p>
+</li>
+<li>
+<p>Used for word embeddings.</p>
+</li>
+<li>
+<p><strong>GloVe</strong></p>
+</li>
+<li>
+<p>Used for word embeddings.</p>
+</li>
+<li>
+<p><strong>FastText</strong></p>
+</li>
+<li>
+<p>Used for text embeddings.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>
+<p>Used for language understanding.</p>
+</li>
+<li>
+<p><strong>Transformer Models</strong></p>
+</li>
+<li>
+<p>Used for modern Large Language Models.</p>
+</li>
+<li>
+<p><strong>Sequence-to-Sequence Models</strong></p>
+</li>
+<li>Used for translation and summarization.</li>
+</ul>
+<h2 id="8-anomaly-detection">8. Anomaly Detection</h2>
+<p>Anomaly detection algorithms are used to find unusual patterns, outliers, suspicious behavior, or rare events.</p>
+<ul>
+<li><strong>Isolation Forest</strong></li>
+<li>
+<p>Used for fraud detection and outlier detection.</p>
+</li>
+<li>
+<p><strong>One-Class Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Used for novelty detection.</p>
+</li>
+<li>
+<p><strong>Local Outlier Factor</strong></p>
+</li>
+<li>
+<p>Used for detecting local anomalies.</p>
+</li>
+<li>
+<p><strong>Autoencoders</strong></p>
+</li>
+<li>
+<p>Used for deep learning-based anomaly detection.</p>
+</li>
+<li>
+<p><strong>Elliptic Envelope</strong></p>
+</li>
+<li>
+<p>Used for statistical anomaly detection.</p>
+</li>
+<li>
+<p><strong>DBSCAN</strong></p>
+</li>
+<li>Used for outlier detection in clusters.</li>
+</ul>
+<h2 id="9-time-series-algorithms">9. Time Series Algorithms</h2>
+<p>Time series algorithms are used for forecasting data over time.</p>
+<ul>
+<li><strong>ARIMA</strong></li>
+<li>
+<p>Used for time series forecasting.</p>
+</li>
+<li>
+<p><strong>SARIMA</strong></p>
+</li>
+<li>
+<p>Used for seasonal forecasting.</p>
+</li>
+<li>
+<p><strong>Exponential Smoothing</strong></p>
+</li>
+<li>
+<p>Used for forecasting trends.</p>
+</li>
+<li>
+<p><strong>Prophet</strong></p>
+</li>
+<li>
+<p>Used for business forecasting.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Network</strong></p>
+</li>
+<li>
+<p>Used for deep learning forecasting.</p>
+</li>
+<li>
+<p><strong>Temporal Convolutional Network</strong></p>
+</li>
+<li>
+<p>Used for sequence forecasting.</p>
+</li>
+<li>
+<p><strong>Transformer-based Forecasting</strong></p>
+</li>
+<li>
+<p>Used for advanced time series prediction.</p>
+</li>
+<li>
+<p><strong>Random Forest Forecasting</strong></p>
+</li>
+<li>
+<p>Used for machine learning-based forecasting.</p>
+</li>
+<li>
+<p><strong>XGBoost Forecasting</strong></p>
+</li>
+<li>Used for strong tabular time series forecasting.</li>
+</ul>
+<h2 id="most-commonly-used-algorithms-in-real-projects">Most Commonly Used Algorithms in Real Projects</h2>
+<p>For interviews and real-world projects, focus especially on these algorithms:</p>
+<ul>
+<li><strong>Linear Regression</strong></li>
+<li>
+<p>Foundation algorithm for regression.</p>
+</li>
+<li>
+<p><strong>Logistic Regression</strong></p>
+</li>
+<li>
+<p>Foundation algorithm for classification.</p>
+</li>
+<li>
+<p><strong>Decision Tree</strong></p>
+</li>
+<li>
+<p>Easy to explain and interpret.</p>
+</li>
+<li>
+<p><strong>Random Forest</strong></p>
+</li>
+<li>
+<p>Strong baseline model for many tasks.</p>
+</li>
+<li>
+<p><strong>XGBoost</strong></p>
+</li>
+<li>
+<p>High-performance model for tabular data.</p>
+</li>
+<li>
+<p><strong>LightGBM</strong></p>
+</li>
+<li>
+<p>Fast model for large-scale data.</p>
+</li>
+<li>
+<p><strong>CatBoost</strong></p>
+</li>
+<li>
+<p>Strong choice when categorical features are important.</p>
+</li>
+<li>
+<p><strong>K-Means</strong></p>
+</li>
+<li>
+<p>Basic and popular clustering algorithm.</p>
+</li>
+<li>
+<p><strong>Principal Component Analysis</strong></p>
+</li>
+<li>
+<p>Common feature reduction method.</p>
+</li>
+<li>
+<p><strong>Naive Bayes</strong></p>
+</li>
+<li>
+<p>Useful for text classification.</p>
+</li>
+<li>
+<p><strong>Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Useful for classification problems.</p>
+</li>
+<li>
+<p><strong>K-Nearest Neighbors</strong></p>
+</li>
+<li>
+<p>Simple similarity-based learning algorithm.</p>
+</li>
+<li>
+<p><strong>Neural Networks</strong></p>
+</li>
+<li>
+<p>Foundation for deep learning.</p>
+</li>
+<li>
+<p><strong>Transformer</strong></p>
+</li>
+<li>
+<p>Foundation of modern Large Language Models.</p>
+</li>
+<li>
+<p><strong>Isolation Forest</strong></p>
+</li>
+<li>Common anomaly detection algorithm.</li>
+</ul>
+<h2 id="quick-interview-tip">Quick Interview Tip</h2>
+<p>When asked which algorithm to use, answer by naming the problem type first.</p>
+<p>Example:</p>
+<blockquote>
+<p>Since the business problem is classification, I would start with Logistic Regression as a baseline, then compare it with Random Forest, XGBoost, LightGBM, or CatBoost depending on accuracy, speed, and interpretability needs.</p>
+</blockquote>
+<p>The best answer connects the business problem, the data type, and the algorithm family.</p>
+    </main>
+    <footer class="site-footer">
+      <p>Created by Abhinav Kanduri for knowledge transfer only.</p>
+      <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">Connect on LinkedIn</a>
+    </footer>
+  </body>
+</html>
