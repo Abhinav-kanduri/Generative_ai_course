@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natural Language Processing Techniques and Algorithms | Generative AI Course</title>
+    <link rel="stylesheet" href="../assets/course-ui.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Course navigation">
+        <a class="brand" href="../index.html">Generative AI Course</a>
+        <div class="nav-links">
+          <a href="../index.html#modules">Modules</a>
+          <a href="../Foundation_week1/README.html">Foundation Week 1</a>
+          <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main class="markdown-page">
+<h1 id="natural-language-processing-techniques-and-algorithms">Natural Language Processing Techniques and Algorithms</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="../README.html">Course home</a></li>
+<li><a href="README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Topics_covered.html">Foundation Week 1 overview</a></li>
+<li><a href="Machine_Learning_Algorithms.html">Machine Learning algorithms</a></li>
+<li><a href="Deep_Learning_Algorithms.html">Deep Learning algorithms</a></li>
+<li><a href="Transformer_Architecture_End_to_End.html">Transformer architecture</a></li>
+<li><a href="Transformer_Model_Families.html">Transformer model families</a></li>
+</ul>
+<p>This README summarizes common <strong>Natural Language Processing (NLP)</strong> techniques and the business problems they solve.</p>
+<p>NLP is used when applications need to understand, search, classify, extract, summarize, translate, or generate human language.</p>
+<h2 id="how-to-use-this-guide">How to Use This Guide</h2>
+<p>Start with the problem:</p>
+<ol>
+<li>Do you need to clean text?</li>
+<li>Do you need to convert text into features?</li>
+<li>Do you need to classify text?</li>
+<li>Do you need to extract names, dates, amounts, or IDs?</li>
+<li>Do you need semantic search or question answering?</li>
+<li>Do you need summarization, translation, or text generation?</li>
+</ol>
+<p>Once the problem is clear, choose the matching NLP technique.</p>
+<h2 id="1-text-preprocessing-techniques">1. Text Preprocessing Techniques</h2>
+<p>Text preprocessing prepares raw text for analysis or machine learning.</p>
+<ul>
+<li><strong>Tokenization</strong></li>
+<li>What it does: Breaks text into words, subwords, or sentences.</li>
+<li>
+<p>Solves: Preparing text for machine learning models.</p>
+</li>
+<li>
+<p><strong>Lowercasing</strong></p>
+</li>
+<li>What it does: Converts all text into lowercase.</li>
+<li>
+<p>Solves: Reducing duplicate word variations like "Bank" and "bank".</p>
+</li>
+<li>
+<p><strong>Stopword Removal</strong></p>
+</li>
+<li>What it does: Removes common words like "is", "the", and "and".</li>
+<li>
+<p>Solves: Improving keyword-focused text analysis.</p>
+</li>
+<li>
+<p><strong>Stemming</strong></p>
+</li>
+<li>What it does: Reduces words to rough root forms, such as "running" to "run".</li>
+<li>
+<p>Solves: Search engines and keyword matching.</p>
+</li>
+<li>
+<p><strong>Lemmatization</strong></p>
+</li>
+<li>What it does: Converts words to proper dictionary forms.</li>
+<li>
+<p>Solves: Better text normalization than stemming.</p>
+</li>
+<li>
+<p><strong>Punctuation Removal</strong></p>
+</li>
+<li>What it does: Removes symbols and special characters.</li>
+<li>
+<p>Solves: Cleaning noisy text data.</p>
+</li>
+<li>
+<p><strong>Spelling Correction</strong></p>
+</li>
+<li>What it does: Fixes spelling mistakes.</li>
+<li>
+<p>Solves: Chatbots, search engines, and customer feedback analysis.</p>
+</li>
+<li>
+<p><strong>Text Normalization</strong></p>
+</li>
+<li>What it does: Standardizes slang, short forms, emojis, and abbreviations.</li>
+<li>
+<p>Solves: Social media analysis and chat data cleaning.</p>
+</li>
+<li>
+<p><strong>Sentence Segmentation</strong></p>
+</li>
+<li>What it does: Splits paragraphs into sentences.</li>
+<li>Solves: Document summarization and question answering.</li>
+</ul>
+<h2 id="2-feature-extraction-techniques">2. Feature Extraction Techniques</h2>
+<p>Feature extraction converts text into numerical or structured representations that models can use.</p>
+<ul>
+<li><strong>Bag of Words</strong></li>
+<li>What it does: Represents text using word frequency.</li>
+<li>
+<p>Solves: Basic text classification.</p>
+</li>
+<li>
+<p><strong>Term Frequency-Inverse Document Frequency</strong></p>
+</li>
+<li>What it does: Gives importance scores to words.</li>
+<li>
+<p>Solves: Search ranking and document similarity.</p>
+</li>
+<li>
+<p><strong>N-Grams</strong></p>
+</li>
+<li>What it does: Captures word combinations like "credit card".</li>
+<li>
+<p>Solves: Phrase detection and sentiment analysis.</p>
+</li>
+<li>
+<p><strong>Word Embeddings</strong></p>
+</li>
+<li>What it does: Converts words into numerical vectors.</li>
+<li>
+<p>Solves: Semantic similarity and recommendations.</p>
+</li>
+<li>
+<p><strong>Sentence Embeddings</strong></p>
+</li>
+<li>What it does: Converts full sentences into vectors.</li>
+<li>
+<p>Solves: Semantic search and document matching.</p>
+</li>
+<li>
+<p><strong>Document Embeddings</strong></p>
+</li>
+<li>What it does: Converts full documents into vectors.</li>
+<li>Solves: Document clustering and document retrieval.</li>
+</ul>
+<h2 id="3-text-classification-algorithms">3. Text Classification Algorithms</h2>
+<p>Text classification assigns text into categories such as billing, complaint, refund, positive, negative, spam, or not spam.</p>
+<ul>
+<li><strong>Naive Bayes</strong></li>
+<li>
+<p>Solves: Spam detection, sentiment classification, and email filtering.</p>
+</li>
+<li>
+<p><strong>Logistic Regression</strong></p>
+</li>
+<li>
+<p>Solves: Customer complaint classification and ticket routing.</p>
+</li>
+<li>
+<p><strong>Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Solves: Document classification and legal text classification.</p>
+</li>
+<li>
+<p><strong>Decision Tree</strong></p>
+</li>
+<li>
+<p>Solves: Rule-based text categorization.</p>
+</li>
+<li>
+<p><strong>Random Forest</strong></p>
+</li>
+<li>
+<p>Solves: Multi-category text classification.</p>
+</li>
+<li>
+<p><strong>Gradient Boosting</strong></p>
+</li>
+<li>
+<p>Solves: High-accuracy text classification.</p>
+</li>
+<li>
+<p><strong>Extreme Gradient Boosting</strong></p>
+</li>
+<li>
+<p>Solves: Large-scale classification problems.</p>
+</li>
+<li>
+<p><strong>Neural Networks</strong></p>
+</li>
+<li>
+<p>Solves: Complex text classification.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>
+<p>Solves: Intent detection, sentiment classification, and document classification.</p>
+</li>
+<li>
+<p><strong>Transformer-based Classifiers</strong></p>
+</li>
+<li>Solves: Modern enterprise-level text classification.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Classify customer emails into billing, technical, refund, or complaint.</li>
+<li>Identify whether feedback is positive, negative, or neutral.</li>
+<li>Detect whether a message is spam or not.</li>
+<li>Route support tickets to the right department.</li>
+</ul>
+<h2 id="4-sentiment-analysis-techniques">4. Sentiment Analysis Techniques</h2>
+<p>Sentiment analysis identifies emotion, opinion, tone, or satisfaction in text.</p>
+<ul>
+<li><strong>Lexicon-Based Sentiment Analysis</strong></li>
+<li>
+<p>Solves: Simple positive or negative word scoring.</p>
+</li>
+<li>
+<p><strong>Naive Bayes</strong></p>
+</li>
+<li>
+<p>Solves: Basic sentiment classification.</p>
+</li>
+<li>
+<p><strong>Logistic Regression</strong></p>
+</li>
+<li>
+<p>Solves: Sentiment prediction from reviews.</p>
+</li>
+<li>
+<p><strong>Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Solves: High-dimensional text sentiment classification.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Network</strong></p>
+</li>
+<li>
+<p>Solves: Sentiment in sequential text.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>
+<p>Solves: Context-aware sentiment understanding.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Deep sentiment, emotion, tone, and intent understanding.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Understand if customer reviews are positive or negative.</li>
+<li>Detect angry customers in call transcripts.</li>
+<li>Monitor brand reputation from social media.</li>
+<li>Identify satisfaction trends from survey responses.</li>
+</ul>
+<h2 id="5-named-entity-recognition-techniques">5. Named Entity Recognition Techniques</h2>
+<p>Named Entity Recognition, or NER, identifies important entities in text.</p>
+<ul>
+<li><strong>Rule-Based Entity Recognition</strong></li>
+<li>
+<p>Solves: Detecting known patterns like dates, phone numbers, and identifiers.</p>
+</li>
+<li>
+<p><strong>Regular Expressions</strong></p>
+</li>
+<li>
+<p>Solves: Extracting structured patterns from text.</p>
+</li>
+<li>
+<p><strong>Conditional Random Field</strong></p>
+</li>
+<li>
+<p>Solves: Sequence labeling and entity extraction.</p>
+</li>
+<li>
+<p><strong>Hidden Markov Model</strong></p>
+</li>
+<li>
+<p>Solves: Older sequence tagging tasks.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Network</strong></p>
+</li>
+<li>
+<p>Solves: Entity extraction from sequence data.</p>
+</li>
+<li>
+<p><strong>BiLSTM with CRF</strong></p>
+</li>
+<li>
+<p>Solves: Strong entity recognition with sequence modeling.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>
+<p>Solves: Modern entity extraction.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Flexible entity extraction from complex documents.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Extract names, dates, amounts, and locations from documents.</li>
+<li>Identify policy numbers or claim numbers.</li>
+<li>Extract company names from contracts.</li>
+<li>Detect sensitive personal information from text.</li>
+</ul>
+<h2 id="6-intent-detection-techniques">6. Intent Detection Techniques</h2>
+<p>Intent detection identifies what a user wants to do.</p>
+<ul>
+<li><strong>Keyword Matching</strong></li>
+<li>
+<p>Solves: Basic intent detection.</p>
+</li>
+<li>
+<p><strong>Rule-Based Matching</strong></p>
+</li>
+<li>
+<p>Solves: FAQ bots and menu-based assistants.</p>
+</li>
+<li>
+<p><strong>Logistic Regression</strong></p>
+</li>
+<li>
+<p>Solves: Simple chatbot intent classification.</p>
+</li>
+<li>
+<p><strong>Support Vector Machine</strong></p>
+</li>
+<li>
+<p>Solves: Intent classification.</p>
+</li>
+<li>
+<p><strong>Neural Networks</strong></p>
+</li>
+<li>
+<p>Solves: Multi-intent classification.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>
+<p>Solves: Context-aware intent detection.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Open-ended intent understanding.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>"I want to reset my password" means password reset intent.</li>
+<li>"My card was charged twice" means billing dispute intent.</li>
+<li>"Where is my order?" means order tracking intent.</li>
+<li>Agent assistants use intent classification to understand customer issues.</li>
+</ul>
+<h2 id="7-topic-modeling-techniques">7. Topic Modeling Techniques</h2>
+<p>Topic modeling discovers hidden themes from large text datasets.</p>
+<ul>
+<li><strong>Latent Dirichlet Allocation</strong></li>
+<li>
+<p>Solves: Discovering topics from documents.</p>
+</li>
+<li>
+<p><strong>Non-Negative Matrix Factorization</strong></p>
+</li>
+<li>
+<p>Solves: Topic extraction from text.</p>
+</li>
+<li>
+<p><strong>Latent Semantic Analysis</strong></p>
+</li>
+<li>
+<p>Solves: Finding hidden semantic patterns.</p>
+</li>
+<li>
+<p><strong>K-Means with Embeddings</strong></p>
+</li>
+<li>
+<p>Solves: Grouping similar text documents.</p>
+</li>
+<li>
+<p><strong>Hierarchical Clustering</strong></p>
+</li>
+<li>
+<p>Solves: Organizing documents into topic trees.</p>
+</li>
+<li>
+<p><strong>BERT Topic Modeling</strong></p>
+</li>
+<li>Solves: Modern topic modeling with embeddings.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Find common reasons customers complain.</li>
+<li>Group thousands of reviews into themes.</li>
+<li>Understand call center issue categories.</li>
+<li>Analyze survey responses without labels.</li>
+</ul>
+<h2 id="8-text-similarity-and-semantic-search">8. Text Similarity and Semantic Search</h2>
+<p>Text similarity and semantic search find related meaning between texts.</p>
+<ul>
+<li><strong>Cosine Similarity</strong></li>
+<li>
+<p>Solves: Measuring similarity between text vectors.</p>
+</li>
+<li>
+<p><strong>Jaccard Similarity</strong></p>
+</li>
+<li>
+<p>Solves: Comparing word overlap.</p>
+</li>
+<li>
+<p><strong>TF-IDF Similarity</strong></p>
+</li>
+<li>
+<p>Solves: Keyword-based document matching.</p>
+</li>
+<li>
+<p><strong>Word Embedding Similarity</strong></p>
+</li>
+<li>
+<p>Solves: Meaning-based word comparison.</p>
+</li>
+<li>
+<p><strong>Sentence Transformer Embeddings</strong></p>
+</li>
+<li>
+<p>Solves: Semantic sentence matching.</p>
+</li>
+<li>
+<p><strong>Dense Vector Search</strong></p>
+</li>
+<li>
+<p>Solves: Semantic search.</p>
+</li>
+<li>
+<p><strong>Sparse Vector Search</strong></p>
+</li>
+<li>
+<p>Solves: Keyword-based search.</p>
+</li>
+<li>
+<p><strong>Hybrid Search</strong></p>
+</li>
+<li>Solves: Combining keyword and semantic search.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Find similar support tickets.</li>
+<li>Match a user query to the correct document chunk.</li>
+<li>Recommend similar articles.</li>
+<li>Find duplicate customer complaints.</li>
+</ul>
+<h2 id="9-question-answering-techniques">9. Question Answering Techniques</h2>
+<p>Question answering systems answer user questions from text or retrieved knowledge.</p>
+<ul>
+<li><strong>Rule-Based Question Answering</strong></li>
+<li>
+<p>Solves: Simple FAQ matching.</p>
+</li>
+<li>
+<p><strong>Information Retrieval-Based Question Answering</strong></p>
+</li>
+<li>
+<p>Solves: Finding the best document and extracting an answer.</p>
+</li>
+<li>
+<p><strong>Machine Reading Comprehension</strong></p>
+</li>
+<li>
+<p>Solves: Reading a passage and answering questions.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>
+<p>Solves: Extractive question answering.</p>
+</li>
+<li>
+<p><strong>Retrieval Augmented Generation</strong></p>
+</li>
+<li>
+<p>Solves: Answering using retrieved documents.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Natural answer generation.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Answer questions from policy documents.</li>
+<li>Build a chatbot over company documents.</li>
+<li>Answer from product manuals.</li>
+<li>Help agents find troubleshooting steps.</li>
+</ul>
+<h2 id="10-text-summarization-techniques">10. Text Summarization Techniques</h2>
+<p>Text summarization reduces long text into shorter meaningful text.</p>
+<ul>
+<li><strong>Extractive Summarization</strong></li>
+<li>
+<p>Solves: Picking important sentences from the original text.</p>
+</li>
+<li>
+<p><strong>Abstractive Summarization</strong></p>
+</li>
+<li>
+<p>Solves: Generating a new summary in natural language.</p>
+</li>
+<li>
+<p><strong>TextRank</strong></p>
+</li>
+<li>
+<p>Solves: Graph-based extractive summarization.</p>
+</li>
+<li>
+<p><strong>Transformer Models</strong></p>
+</li>
+<li>
+<p>Solves: High-quality summarization.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Meeting notes, call summaries, and document summaries.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Summarize customer call transcripts.</li>
+<li>Summarize legal or policy documents.</li>
+<li>Summarize long email threads.</li>
+<li>Generate executive summaries.</li>
+</ul>
+<h2 id="11-text-generation-techniques">11. Text Generation Techniques</h2>
+<p>Text generation creates human-like text.</p>
+<ul>
+<li><strong>Template-Based Generation</strong></li>
+<li>
+<p>Solves: Fixed-format response generation.</p>
+</li>
+<li>
+<p><strong>Markov Chains</strong></p>
+</li>
+<li>
+<p>Solves: Basic text generation.</p>
+</li>
+<li>
+<p><strong>Recurrent Neural Networks</strong></p>
+</li>
+<li>
+<p>Solves: Sequence-based generation.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Networks</strong></p>
+</li>
+<li>
+<p>Solves: Better sequence generation.</p>
+</li>
+<li>
+<p><strong>Transformer Decoder Models</strong></p>
+</li>
+<li>
+<p>Solves: Modern text generation.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Chatbots, content generation, and code generation.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Generate chatbot responses.</li>
+<li>Generate email drafts.</li>
+<li>Generate product descriptions.</li>
+<li>Generate answers from retrieved context.</li>
+</ul>
+<h2 id="12-machine-translation-techniques">12. Machine Translation Techniques</h2>
+<p>Machine translation converts text from one language to another.</p>
+<ul>
+<li><strong>Rule-Based Machine Translation</strong></li>
+<li>
+<p>Solves: Dictionary and grammar-based translation.</p>
+</li>
+<li>
+<p><strong>Statistical Machine Translation</strong></p>
+</li>
+<li>
+<p>Solves: Probability-based translation.</p>
+</li>
+<li>
+<p><strong>Sequence-to-Sequence Models</strong></p>
+</li>
+<li>
+<p>Solves: Neural translation.</p>
+</li>
+<li>
+<p><strong>Attention-Based Models</strong></p>
+</li>
+<li>
+<p>Solves: Better context translation.</p>
+</li>
+<li>
+<p><strong>Transformer Models</strong></p>
+</li>
+<li>
+<p>Solves: Modern translation systems.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Multilingual translation and localization.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Translate English to Spanish.</li>
+<li>Translate customer messages in real time.</li>
+<li>Localize website content.</li>
+<li>Translate documents.</li>
+</ul>
+<h2 id="13-speech-and-text-processing-techniques">13. Speech and Text Processing Techniques</h2>
+<p>Speech and text processing is used when working with voice data and transcripts.</p>
+<ul>
+<li><strong>Speech-to-Text</strong></li>
+<li>
+<p>Solves: Converting audio into text.</p>
+</li>
+<li>
+<p><strong>Text-to-Speech</strong></p>
+</li>
+<li>
+<p>Solves: Converting text into voice.</p>
+</li>
+<li>
+<p><strong>Speaker Diarization</strong></p>
+</li>
+<li>
+<p>Solves: Identifying who spoke and when.</p>
+</li>
+<li>
+<p><strong>Keyword Spotting</strong></p>
+</li>
+<li>
+<p>Solves: Detecting important words in audio.</p>
+</li>
+<li>
+<p><strong>Sentiment Analysis on Transcript</strong></p>
+</li>
+<li>
+<p>Solves: Understanding customer emotion.</p>
+</li>
+<li>
+<p><strong>Call Transcript Summarization</strong></p>
+</li>
+<li>Solves: Summarizing customer-agent conversations.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Convert customer calls into text.</li>
+<li>Analyze agent-customer conversations.</li>
+<li>Detect fraud-related words in calls.</li>
+<li>Summarize call center conversations.</li>
+</ul>
+<h2 id="14-information-extraction-techniques">14. Information Extraction Techniques</h2>
+<p>Information extraction converts unstructured text into structured data.</p>
+<ul>
+<li><strong>Regular Expressions</strong></li>
+<li>
+<p>Solves: Extracting emails, phone numbers, and codes.</p>
+</li>
+<li>
+<p><strong>Named Entity Recognition</strong></p>
+</li>
+<li>
+<p>Solves: Extracting names, dates, and organizations.</p>
+</li>
+<li>
+<p><strong>Relation Extraction</strong></p>
+</li>
+<li>
+<p>Solves: Identifying relationships between entities.</p>
+</li>
+<li>
+<p><strong>Dependency Parsing</strong></p>
+</li>
+<li>
+<p>Solves: Understanding grammar relationships.</p>
+</li>
+<li>
+<p><strong>Table Extraction</strong></p>
+</li>
+<li>
+<p>Solves: Extracting tabular data from documents.</p>
+</li>
+<li>
+<p><strong>Large Language Models</strong></p>
+</li>
+<li>Solves: Extracting structured JSON from documents.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Extract invoice number, amount, and date.</li>
+<li>Extract skills from resumes.</li>
+<li>Extract terms from contracts.</li>
+<li>Extract claim details from insurance documents.</li>
+</ul>
+<h2 id="15-text-clustering-techniques">15. Text Clustering Techniques</h2>
+<p>Text clustering groups similar text without labels.</p>
+<ul>
+<li><strong>K-Means Clustering</strong></li>
+<li>
+<p>Solves: Grouping similar documents.</p>
+</li>
+<li>
+<p><strong>Hierarchical Clustering</strong></p>
+</li>
+<li>
+<p>Solves: Creating topic hierarchies.</p>
+</li>
+<li>
+<p><strong>DBSCAN</strong></p>
+</li>
+<li>
+<p>Solves: Finding dense groups and outliers.</p>
+</li>
+<li>
+<p><strong>Gaussian Mixture Model</strong></p>
+</li>
+<li>
+<p>Solves: Probabilistic grouping.</p>
+</li>
+<li>
+<p><strong>Embedding-Based Clustering</strong></p>
+</li>
+<li>Solves: Grouping text by semantic meaning.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Group similar complaints.</li>
+<li>Find themes in feedback.</li>
+<li>Organize knowledge base articles.</li>
+<li>Detect unusual support tickets.</li>
+</ul>
+<h2 id="16-text-ranking-and-reranking-techniques">16. Text Ranking and Reranking Techniques</h2>
+<p>Ranking and reranking choose the best documents, chunks, or answers.</p>
+<ul>
+<li><strong>Best Matching 25</strong></li>
+<li>
+<p>Solves: Keyword-based ranking.</p>
+</li>
+<li>
+<p><strong>Dense Retrieval</strong></p>
+</li>
+<li>
+<p>Solves: Semantic ranking.</p>
+</li>
+<li>
+<p><strong>Cross-Encoder Reranking</strong></p>
+</li>
+<li>
+<p>Solves: More accurate reranking of retrieved results.</p>
+</li>
+<li>
+<p><strong>Reciprocal Rank Fusion</strong></p>
+</li>
+<li>
+<p>Solves: Combining multiple ranking results.</p>
+</li>
+<li>
+<p><strong>Learning to Rank</strong></p>
+</li>
+<li>Solves: Learning ranking from user behavior.</li>
+</ul>
+<p>Example problems:</p>
+<ul>
+<li>Retrieve the best document chunks for a chatbot.</li>
+<li>Improve search result quality.</li>
+<li>Rank answers by relevance.</li>
+<li>Improve Retrieval Augmented Generation accuracy.</li>
+</ul>
+<h2 id="most-important-nlp-techniques-for-real-projects">Most Important NLP Techniques for Real Projects</h2>
+<ul>
+<li><strong>Customer support chatbot</strong></li>
+<li>
+<p>Best techniques: Intent detection, semantic search, Retrieval Augmented Generation, summarization.</p>
+</li>
+<li>
+<p><strong>Resume screening</strong></p>
+</li>
+<li>
+<p>Best techniques: Named entity recognition, classification, similarity matching.</p>
+</li>
+<li>
+<p><strong>Fraud detection from text</strong></p>
+</li>
+<li>
+<p>Best techniques: Keyword detection, entity extraction, classification.</p>
+</li>
+<li>
+<p><strong>Sentiment analysis</strong></p>
+</li>
+<li>
+<p>Best techniques: Text classification and transformer models.</p>
+</li>
+<li>
+<p><strong>Document search</strong></p>
+</li>
+<li>
+<p>Best techniques: Dense search, sparse search, hybrid search, reranking.</p>
+</li>
+<li>
+<p><strong>Call center analytics</strong></p>
+</li>
+<li>
+<p>Best techniques: Speech-to-text, sentiment analysis, topic modeling, summarization.</p>
+</li>
+<li>
+<p><strong>Email classification</strong></p>
+</li>
+<li>
+<p>Best techniques: Naive Bayes, logistic regression, transformer classifier.</p>
+</li>
+<li>
+<p><strong>Contract analysis</strong></p>
+</li>
+<li>
+<p>Best techniques: Named entity recognition, relation extraction, summarization.</p>
+</li>
+<li>
+<p><strong>Policy question answering</strong></p>
+</li>
+<li>
+<p>Best techniques: Retrieval Augmented Generation and question answering.</p>
+</li>
+<li>
+<p><strong>Social media monitoring</strong></p>
+</li>
+<li>Best techniques: Sentiment analysis, slang normalization, topic modeling.</li>
+</ul>
+<h2 id="simple-interview-friendly-summary">Simple Interview-Friendly Summary</h2>
+<p>NLP mainly solves these problems:</p>
+<ul>
+<li><strong>Understand text meaning</strong></li>
+<li>
+<p>Use embeddings and transformers.</p>
+</li>
+<li>
+<p><strong>Classify text</strong></p>
+</li>
+<li>
+<p>Use text classification.</p>
+</li>
+<li>
+<p><strong>Extract important details</strong></p>
+</li>
+<li>
+<p>Use named entity recognition.</p>
+</li>
+<li>
+<p><strong>Find similar documents</strong></p>
+</li>
+<li>
+<p>Use semantic search.</p>
+</li>
+<li>
+<p><strong>Answer questions</strong></p>
+</li>
+<li>
+<p>Use question answering and Retrieval Augmented Generation.</p>
+</li>
+<li>
+<p><strong>Summarize long text</strong></p>
+</li>
+<li>
+<p>Use text summarization.</p>
+</li>
+<li>
+<p><strong>Generate responses</strong></p>
+</li>
+<li>
+<p>Use text generation.</p>
+</li>
+<li>
+<p><strong>Translate languages</strong></p>
+</li>
+<li>
+<p>Use machine translation.</p>
+</li>
+<li>
+<p><strong>Detect emotion</strong></p>
+</li>
+<li>
+<p>Use sentiment analysis.</p>
+</li>
+<li>
+<p><strong>Group similar texts</strong></p>
+</li>
+<li>
+<p>Use topic modeling and clustering.</p>
+</li>
+<li>
+<p><strong>Rank best results</strong></p>
+</li>
+<li>Use search ranking and reranking.</li>
+</ul>
+<p>The most commonly used NLP techniques in modern AI projects are:</p>
+<ul>
+<li>Tokenization</li>
+<li>Embeddings</li>
+<li>Text classification</li>
+<li>Named entity recognition</li>
+<li>Semantic search</li>
+<li>Reranking</li>
+<li>Summarization</li>
+<li>Question answering</li>
+<li>Retrieval Augmented Generation</li>
+<li>Large Language Models</li>
+</ul>
+<h2 id="interview-tip">Interview Tip</h2>
+<p>When explaining an NLP solution, start with the business problem first.</p>
+<p>Example:</p>
+<blockquote>
+<p>Since the problem is to answer questions from company documents, I would use Retrieval Augmented Generation. First, I would retrieve the most relevant document chunks using semantic search, then use a Large Language Model to generate an answer grounded in those documents.</p>
+</blockquote>
+    </main>
+    <footer class="site-footer">
+      <p>Created by Abhinav Kanduri for knowledge transfer only.</p>
+      <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">Connect on LinkedIn</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+# Author: Abhinav Kanduri
+# GitHub: @Abhinav-kanduri
+# LinkedIn: https://www.linkedin.com/in/abhinav-kanduri-a943b9353/
+# Purpose: Knowledge transfer only.
+
+name: Deploy Course Notes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.md"
+      - "**/*.html"
+      - "**/*.css"
+      - "**/*.pdf"
+      - "scripts/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    environment:
+      name: "github-pages"
+      url: "${{ steps.deployment.outputs.page_url }}"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install site build dependencies
+        run: python -m pip install markdown
+
+      - name: Build styled static site
+        run: python scripts/build_site.py
+
+      - name: Validate generated site links
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          root = Path("_site")
+          missing = []
+          markdown_links = []
+
+          for page in root.rglob("*.html"):
+              text = page.read_text(encoding="utf-8")
+              for link in re.findall(r'href="([^"]+)"', text):
+                  if link.startswith(("http://", "https://", "#", "mailto:")):
+                      continue
+                  target = link.split("#", 1)[0]
+                  if not target:
+                      continue
+                  if target.endswith(".md"):
+                      markdown_links.append((page, link))
+                  if not (page.parent / target).resolve().exists():
+                      missing.append((page, link))
+
+          if missing or markdown_links:
+              for page, link in missing:
+                  print(f"Missing link in {page}: {link}")
+              for page, link in markdown_links:
+                  print(f"Markdown link left in generated site {page}: {link}")
+              sys.exit(1)
+
+          print("Generated site links validated successfully.")
+          PY
+
+      - name: Upload static site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

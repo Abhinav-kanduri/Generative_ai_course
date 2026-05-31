@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transformer Models in Three Families | Generative AI Course</title>
+    <link rel="stylesheet" href="../assets/course-ui.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Course navigation">
+        <a class="brand" href="../index.html">Generative AI Course</a>
+        <div class="nav-links">
+          <a href="../index.html#modules">Modules</a>
+          <a href="../Foundation_week1/README.html">Foundation Week 1</a>
+          <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main class="markdown-page">
+<h1 id="transformer-models-in-three-families">Transformer Models in Three Families</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="../README.html">Course home</a></li>
+<li><a href="README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Topics_covered.html">Foundation Week 1 overview</a></li>
+<li><a href="Machine_Learning_Algorithms.html">Machine Learning algorithms</a></li>
+<li><a href="Natural_Language_Processing_Techniques.html">Natural Language Processing techniques</a></li>
+<li><a href="Deep_Learning_Algorithms.html">Deep Learning algorithms</a></li>
+<li><a href="Transformer_Architecture_End_to_End.html">Transformer architecture</a></li>
+</ul>
+<p>Transformer models are commonly grouped into <strong>three major families</strong>:</p>
+<ol>
+<li><strong>Encoder-only</strong></li>
+<li><strong>Decoder-only</strong></li>
+<li><strong>Encoder-decoder</strong></li>
+</ol>
+<p>All three families are based on the Transformer idea from <strong>Attention Is All You Need</strong>, which replaced recurrent sequence processing with attention-based processing.</p>
+<h2 id="quick-summary">Quick Summary</h2>
+<ul>
+<li><strong>Encoder-only models</strong></li>
+<li>Understand text.</li>
+<li>
+<p>Best for classification, embeddings, semantic search, named entity recognition, reranking, and intent detection.</p>
+</li>
+<li>
+<p><strong>Decoder-only models</strong></p>
+</li>
+<li>Generate text.</li>
+<li>
+<p>Best for chatbots, content generation, reasoning, code generation, tool calling, and agentic AI.</p>
+</li>
+<li>
+<p><strong>Encoder-decoder models</strong></p>
+</li>
+<li>Understand input first, then generate output.</li>
+<li>Best for translation, summarization, question answering, rewriting, and report generation.</li>
+</ul>
+<h2 id="1-what-is-an-encoder">1. What Is an Encoder?</h2>
+<p>An <strong>encoder</strong> is used to understand the input.</p>
+<p>It reads the full sentence or document and creates a contextual representation.</p>
+<p>Example:</p>
+<blockquote>
+<p>The card was stolen.</p>
+</blockquote>
+<p>The encoder understands:</p>
+<ul>
+<li><strong>card</strong></li>
+<li>
+<p>Contextual meaning: financial or payment object.</p>
+</li>
+<li>
+<p><strong>stolen</strong></p>
+</li>
+<li>
+<p>Contextual meaning: negative fraud event.</p>
+</li>
+<li>
+<p><strong>card + stolen</strong></p>
+</li>
+<li>Contextual meaning: possible fraud issue.</li>
+</ul>
+<h3 id="encoder-only-models-are-best-for">Encoder-Only Models Are Best For</h3>
+<ul>
+<li>Text classification</li>
+<li>
+<p>Example: complaint, fraud, sentiment, category.</p>
+</li>
+<li>
+<p>Named entity recognition</p>
+</li>
+<li>
+<p>Example: extract names, dates, account numbers.</p>
+</li>
+<li>
+<p>Semantic search</p>
+</li>
+<li>
+<p>Example: convert text into embeddings.</p>
+</li>
+<li>
+<p>Similarity matching</p>
+</li>
+<li>
+<p>Example: match resume to job description.</p>
+</li>
+<li>
+<p>Reranking</p>
+</li>
+<li>
+<p>Example: rank best document chunks.</p>
+</li>
+<li>
+<p>Intent detection</p>
+</li>
+<li>Example: billing issue, refund request, password reset.</li>
+</ul>
+<h3 id="simple-meaning">Simple Meaning</h3>
+<blockquote>
+<p>Encoder = understands the text.</p>
+</blockquote>
+<h2 id="2-what-is-a-decoder">2. What Is a Decoder?</h2>
+<p>A <strong>decoder</strong> is used to generate output.</p>
+<p>It predicts the next token one token at a time.</p>
+<p>Example prompt:</p>
+<blockquote>
+<p>Explain credit card fraud in simple words.</p>
+</blockquote>
+<p>The decoder may generate:</p>
+<blockquote>
+<p>Credit card fraud happens when someone uses another person's card without permission.</p>
+</blockquote>
+<h3 id="decoder-only-models-are-best-for">Decoder-Only Models Are Best For</h3>
+<ul>
+<li>Chatbots</li>
+<li>
+<p>Example: ChatGPT-style assistant.</p>
+</li>
+<li>
+<p>Text generation</p>
+</li>
+<li>
+<p>Example: emails, summaries, explanations.</p>
+</li>
+<li>
+<p>Code generation</p>
+</li>
+<li>
+<p>Example: Python, SQL, Java.</p>
+</li>
+<li>
+<p>Reasoning</p>
+</li>
+<li>
+<p>Example: step-by-step answers.</p>
+</li>
+<li>
+<p>Agentic AI</p>
+</li>
+<li>
+<p>Example: tool calling, planning, actions.</p>
+</li>
+<li>
+<p>Conversational assistants</p>
+</li>
+<li>Example: customer support bot.</li>
+</ul>
+<h3 id="simple-meaning_1">Simple Meaning</h3>
+<blockquote>
+<p>Decoder = generates the text.</p>
+</blockquote>
+<h2 id="3-what-is-an-encoder-decoder-model">3. What Is an Encoder-Decoder Model?</h2>
+<p>An <strong>encoder-decoder</strong> model first understands the input using the encoder, then generates output using the decoder.</p>
+<p>Example input:</p>
+<blockquote>
+<p>Summarize this 10-page policy document.</p>
+</blockquote>
+<p>Encoder:</p>
+<ul>
+<li>Reads and understands the document.</li>
+</ul>
+<p>Decoder:</p>
+<ul>
+<li>Generates the summary.</li>
+</ul>
+<h3 id="encoder-decoder-models-are-best-for">Encoder-Decoder Models Are Best For</h3>
+<ul>
+<li>Translation</li>
+<li>
+<p>Example: English to French.</p>
+</li>
+<li>
+<p>Summarization</p>
+</li>
+<li>
+<p>Example: long article to short summary.</p>
+</li>
+<li>
+<p>Question answering</p>
+</li>
+<li>
+<p>Example: answer from a given passage.</p>
+</li>
+<li>
+<p>Data-to-text generation</p>
+</li>
+<li>
+<p>Example: generate a report from structured data.</p>
+</li>
+<li>
+<p>Document rewriting</p>
+</li>
+<li>Example: rewrite in formal, simple, or technical language.</li>
+</ul>
+<h3 id="simple-meaning_2">Simple Meaning</h3>
+<blockquote>
+<p>Encoder-decoder = understands first, then generates.</p>
+</blockquote>
+<h2 id="4-main-difference-between-the-three-families">4. Main Difference Between the Three Families</h2>
+<h3 id="encoder-only">Encoder-Only</h3>
+<ul>
+<li>What it does:</li>
+<li>
+<p>Understands input deeply.</p>
+</li>
+<li>
+<p>Output style:</p>
+</li>
+<li>Label</li>
+<li>Embedding</li>
+<li>Score</li>
+<li>
+<p>Extracted entity</p>
+</li>
+<li>
+<p>Best fit:</p>
+</li>
+<li>Classification</li>
+<li>Search</li>
+<li>Entity extraction</li>
+<li>Similarity</li>
+<li>Reranking</li>
+</ul>
+<h3 id="decoder-only">Decoder-Only</h3>
+<ul>
+<li>What it does:</li>
+<li>
+<p>Generates the next token.</p>
+</li>
+<li>
+<p>Output style:</p>
+</li>
+<li>
+<p>Free-form generated text.</p>
+</li>
+<li>
+<p>Best fit:</p>
+</li>
+<li>Chatbots</li>
+<li>Reasoning</li>
+<li>Content generation</li>
+<li>Code generation</li>
+<li>Agents</li>
+</ul>
+<h3 id="encoder-decoder">Encoder-Decoder</h3>
+<ul>
+<li>What it does:</li>
+<li>
+<p>Understands input and generates output.</p>
+</li>
+<li>
+<p>Output style:</p>
+</li>
+<li>
+<p>Controlled generated text.</p>
+</li>
+<li>
+<p>Best fit:</p>
+</li>
+<li>Translation</li>
+<li>Summarization</li>
+<li>Question answering</li>
+<li>Rewriting</li>
+</ul>
+<h2 id="5-encoder-only-transformer-models">5. Encoder-Only Transformer Models</h2>
+<p>Encoder-only models are mainly used for <strong>understanding text</strong>.</p>
+<h3 id="common-encoder-only-models">Common Encoder-Only Models</h3>
+<ul>
+<li><strong>BERT</strong></li>
+<li>What it does: Reads text from both left and right context.</li>
+<li>Advantages: Strong for classification, named entity recognition, and question answering.</li>
+<li>Disadvantages: Not naturally good for open-ended generation.</li>
+<li>Improved versions: RoBERTa, ALBERT, DistilBERT, ELECTRA, DeBERTa.</li>
+<li>
+<p>Best fit: Text understanding tasks.</p>
+</li>
+<li>
+<p><strong>RoBERTa</strong></p>
+</li>
+<li>What it does: Optimized version of BERT.</li>
+<li>Advantages: Better training strategy and stronger performance.</li>
+<li>Disadvantages: Requires more compute and data.</li>
+<li>Improved versions: DeBERTa, MPNet.</li>
+<li>
+<p>Best fit: High-accuracy classification and ranking.</p>
+</li>
+<li>
+<p><strong>ALBERT</strong></p>
+</li>
+<li>What it does: Lightweight BERT-style model.</li>
+<li>Advantages: Fewer parameters and lower memory usage.</li>
+<li>Disadvantages: May be less straightforward for some fine-tuning cases.</li>
+<li>Improved versions: DistilBERT, TinyBERT-style models.</li>
+<li>
+<p>Best fit: Low-resource environments.</p>
+</li>
+<li>
+<p><strong>DistilBERT</strong></p>
+</li>
+<li>What it does: Smaller distilled version of BERT.</li>
+<li>Advantages: Smaller, faster, and cheaper.</li>
+<li>Disadvantages: Slight accuracy drop compared with full BERT.</li>
+<li>Improved versions: MiniLM, TinyBERT-style models.</li>
+<li>
+<p>Best fit: Fast inference and production APIs.</p>
+</li>
+<li>
+<p><strong>ELECTRA</strong></p>
+</li>
+<li>What it does: Learns by detecting replaced or fake tokens.</li>
+<li>Advantages: More sample-efficient than masked language modeling.</li>
+<li>Disadvantages: Training setup is more complex.</li>
+<li>Improved versions: DeBERTa, MPNet.</li>
+<li>
+<p>Best fit: Efficient pretraining and classification.</p>
+</li>
+<li>
+<p><strong>DeBERTa</strong></p>
+</li>
+<li>What it does: Improves attention using separate content and position representations.</li>
+<li>Advantages: Very strong language understanding performance.</li>
+<li>Disadvantages: Heavier and more complex.</li>
+<li>Improved versions: Larger DeBERTa variants and modern embedding/reranking models.</li>
+<li>
+<p>Best fit: Natural language understanding and ranking.</p>
+</li>
+<li>
+<p><strong>Sentence-BERT</strong></p>
+</li>
+<li>What it does: Creates sentence embeddings using a Siamese network structure.</li>
+<li>Advantages: Excellent for semantic search and similarity.</li>
+<li>Disadvantages: Not designed for generation.</li>
+<li>Improved versions: Modern embedding models.</li>
+<li>
+<p>Best fit: Vector search and RAG retrieval.</p>
+</li>
+<li>
+<p><strong>Longformer</strong></p>
+</li>
+<li>What it does: Handles long documents using local and global attention.</li>
+<li>Advantages: Good for long document processing.</li>
+<li>Disadvantages: Not always needed for short text.</li>
+<li>Improved versions: Longformer Encoder-Decoder, BigBird.</li>
+<li>
+<p>Best fit: Long policy, legal, research, and support documents.</p>
+</li>
+<li>
+<p><strong>BigBird</strong></p>
+</li>
+<li>What it does: Uses sparse attention for long sequences.</li>
+<li>Advantages: Handles longer context with lower memory.</li>
+<li>Disadvantages: More complex attention pattern.</li>
+<li>Improved versions: Long-context Transformer models.</li>
+<li>
+<p>Best fit: Long document question answering.</p>
+</li>
+<li>
+<p><strong>MPNet</strong></p>
+</li>
+<li>What it does: Combines masked and permuted language modeling ideas.</li>
+<li>Advantages: Strong sentence representation.</li>
+<li>Disadvantages: Less commonly discussed than the BERT family.</li>
+<li>Improved versions: Modern embedding models.</li>
+<li>Best fit: Semantic similarity and embeddings.</li>
+</ul>
+<h3 id="when-to-use-encoder-only-models">When to Use Encoder-Only Models</h3>
+<p>Use encoder-only models when your answer is not free-form generation.</p>
+<ul>
+<li><strong>Sentiment analysis</strong></li>
+<li>
+<p>Use BERT, RoBERTa, or DeBERTa.</p>
+</li>
+<li>
+<p><strong>Named entity recognition</strong></p>
+</li>
+<li>
+<p>Use BERT or DeBERTa.</p>
+</li>
+<li>
+<p><strong>Resume-job matching</strong></p>
+</li>
+<li>
+<p>Use Sentence-BERT or MPNet.</p>
+</li>
+<li>
+<p><strong>Semantic search</strong></p>
+</li>
+<li>
+<p>Use Sentence-BERT or embedding models.</p>
+</li>
+<li>
+<p><strong>Reranking chunks</strong></p>
+</li>
+<li>
+<p>Use cross-encoder BERT-style models.</p>
+</li>
+<li>
+<p><strong>Long document classification</strong></p>
+</li>
+<li>Use Longformer or BigBird.</li>
+</ul>
+<h2 id="6-decoder-only-transformer-models">6. Decoder-Only Transformer Models</h2>
+<p>Decoder-only models are mainly used for <strong>generation</strong>.</p>
+<h3 id="common-decoder-only-models">Common Decoder-Only Models</h3>
+<ul>
+<li><strong>GPT</strong></li>
+<li>What it does: Predicts the next token using a decoder-only Transformer.</li>
+<li>Advantages: Strong foundation for text generation.</li>
+<li>Disadvantages: Earlier versions had limited reasoning and context.</li>
+<li>Improved versions: GPT-2, GPT-3, and modern instruction-tuned LLMs.</li>
+<li>
+<p>Best fit: Text generation.</p>
+</li>
+<li>
+<p><strong>GPT-2</strong></p>
+</li>
+<li>What it does: Larger decoder-only language model.</li>
+<li>Advantages: Better zero-shot generation.</li>
+<li>Disadvantages: Can hallucinate and can be expensive to run.</li>
+<li>Improved versions: GPT-3 and later models.</li>
+<li>
+<p>Best fit: Open-ended text generation.</p>
+</li>
+<li>
+<p><strong>GPT-3</strong></p>
+</li>
+<li>What it does: Large-scale autoregressive language model.</li>
+<li>Advantages: Strong few-shot and in-context learning.</li>
+<li>Disadvantages: High compute cost and hallucination risk.</li>
+<li>Improved versions: Modern instruction-tuned Large Language Models.</li>
+<li>
+<p>Best fit: Few-shot reasoning and generation.</p>
+</li>
+<li>
+<p><strong>Transformer-XL</strong></p>
+</li>
+<li>What it does: Extends context using segment-level recurrence.</li>
+<li>Advantages: Better long-context language modeling.</li>
+<li>Disadvantages: More complex than a standard decoder.</li>
+<li>Improved versions: Long-context decoder models.</li>
+<li>
+<p>Best fit: Long-context generation.</p>
+</li>
+<li>
+<p><strong>LLaMA</strong></p>
+</li>
+<li>What it does: Efficient open foundation language model family.</li>
+<li>Advantages: Strong performance with smaller parameter sizes.</li>
+<li>Disadvantages: Requires fine-tuning or alignment for assistant behavior.</li>
+<li>Improved versions: Llama 2, Llama 3-style models.</li>
+<li>
+<p>Best fit: Open foundation model use cases.</p>
+</li>
+<li>
+<p><strong>Mistral 7B</strong></p>
+</li>
+<li>What it does: Efficient decoder model using grouped-query attention and sliding-window attention.</li>
+<li>Advantages: Strong performance for its size and efficient inference.</li>
+<li>Disadvantages: Smaller models may struggle on very complex tasks compared with larger models.</li>
+<li>Improved versions: Mixtral and newer efficient decoder models.</li>
+<li>
+<p>Best fit: Efficient production inference.</p>
+</li>
+<li>
+<p><strong>Code-focused decoder models</strong></p>
+</li>
+<li>What they do: Generate and explain code.</li>
+<li>Advantages: Good for software engineering tasks.</li>
+<li>Disadvantages: Can produce incorrect code if context is weak.</li>
+<li>Improved versions: Code-specialized Large Language Models.</li>
+<li>
+<p>Best fit: Programming assistance.</p>
+</li>
+<li>
+<p><strong>Instruction-tuned decoder models</strong></p>
+</li>
+<li>What they do: Follow user instructions.</li>
+<li>Advantages: Best for assistants and agents.</li>
+<li>Disadvantages: Need safety, evaluation, and monitoring.</li>
+<li>Improved versions: Chat and agentic models.</li>
+<li>Best fit: Conversational AI and tool-using assistants.</li>
+</ul>
+<h3 id="when-to-use-decoder-only-models">When to Use Decoder-Only Models</h3>
+<p>Use decoder-only models when you want the model to generate something.</p>
+<ul>
+<li><strong>Chatbot</strong></li>
+<li>
+<p>Use a decoder-only Large Language Model.</p>
+</li>
+<li>
+<p><strong>Customer support assistant</strong></p>
+</li>
+<li>
+<p>Use an instruction-tuned decoder model.</p>
+</li>
+<li>
+<p><strong>Code generation</strong></p>
+</li>
+<li>
+<p>Use a code-specialized decoder model.</p>
+</li>
+<li>
+<p><strong>Agentic AI</strong></p>
+</li>
+<li>
+<p>Use a decoder model with tool calling.</p>
+</li>
+<li>
+<p><strong>Email drafting</strong></p>
+</li>
+<li>
+<p>Use a decoder-only model.</p>
+</li>
+<li>
+<p><strong>Explanation generation</strong></p>
+</li>
+<li>
+<p>Use a decoder-only model.</p>
+</li>
+<li>
+<p><strong>RAG answer generation</strong></p>
+</li>
+<li>Use a decoder-only model.</li>
+</ul>
+<h2 id="7-encoder-decoder-transformer-models">7. Encoder-Decoder Transformer Models</h2>
+<p>Encoder-decoder models are used when the input and output are both important.</p>
+<h3 id="common-encoder-decoder-models">Common Encoder-Decoder Models</h3>
+<ul>
+<li><strong>Original Transformer</strong></li>
+<li>What it does: Encoder reads the source, decoder generates the target.</li>
+<li>Advantages: Strong for translation and sequence-to-sequence tasks.</li>
+<li>Disadvantages: Attention can be expensive for long sequences.</li>
+<li>Improved versions: BERT, GPT, T5, and related Transformer families.</li>
+<li>
+<p>Best fit: Sequence-to-sequence learning.</p>
+</li>
+<li>
+<p><strong>T5</strong></p>
+</li>
+<li>What it does: Converts every task into a text-to-text format.</li>
+<li>Advantages: Flexible for many tasks.</li>
+<li>Disadvantages: Can be heavy for simple classification.</li>
+<li>Improved versions: Flan-T5 and instruction-tuned sequence-to-sequence models.</li>
+<li>
+<p>Best fit: Translation, summarization, classification, and question answering.</p>
+</li>
+<li>
+<p><strong>BART</strong></p>
+</li>
+<li>What it does: Uses a denoising encoder-decoder model.</li>
+<li>Advantages: Excellent for summarization and generation.</li>
+<li>Disadvantages: More complex than encoder-only models.</li>
+<li>Improved versions: Pegasus and Longformer Encoder-Decoder.</li>
+<li>
+<p>Best fit: Summarization and generation.</p>
+</li>
+<li>
+<p><strong>Longformer Encoder-Decoder</strong></p>
+</li>
+<li>What it does: Encoder-decoder model for long documents.</li>
+<li>Advantages: Good for long document summarization.</li>
+<li>Disadvantages: More specialized architecture.</li>
+<li>Improved versions: Long-context summarization models.</li>
+<li>
+<p>Best fit: Long document summarization.</p>
+</li>
+<li>
+<p><strong>Marian-style Neural Machine Translation models</strong></p>
+</li>
+<li>What they do: Translation-focused encoder-decoder models.</li>
+<li>Advantages: Strong for translation.</li>
+<li>Disadvantages: Not as general-purpose as Large Language Models.</li>
+<li>Improved versions: Multilingual encoder-decoder models.</li>
+<li>
+<p>Best fit: Machine translation.</p>
+</li>
+<li>
+<p><strong>Question-answering encoder-decoder models</strong></p>
+</li>
+<li>What they do: Read context and generate an answer.</li>
+<li>Advantages: Good for grounded answer generation.</li>
+<li>Disadvantages: Need strong retrieval and context quality.</li>
+<li>Improved versions: RAG with Large Language Models.</li>
+<li>Best fit: Document question answering.</li>
+</ul>
+<h3 id="when-to-use-encoder-decoder-models">When to Use Encoder-Decoder Models</h3>
+<p>Use encoder-decoder models when the output must be generated based strongly on an input document or sentence.</p>
+<ul>
+<li><strong>Translation</strong></li>
+<li>
+<p>Use encoder-decoder Transformer models.</p>
+</li>
+<li>
+<p><strong>Summarization</strong></p>
+</li>
+<li>
+<p>Use T5 or BART.</p>
+</li>
+<li>
+<p><strong>Document question answering</strong></p>
+</li>
+<li>
+<p>Use T5, BART, or RAG.</p>
+</li>
+<li>
+<p><strong>Rewriting</strong></p>
+</li>
+<li>
+<p>Use encoder-decoder models.</p>
+</li>
+<li>
+<p><strong>Report generation</strong></p>
+</li>
+<li>
+<p>Use encoder-decoder models.</p>
+</li>
+<li>
+<p><strong>Long document summarization</strong></p>
+</li>
+<li>Use Longformer Encoder-Decoder.</li>
+</ul>
+<h2 id="8-simple-architecture-flows">8. Simple Architecture Flows</h2>
+<h3 id="encoder-only-flow">Encoder-Only Flow</h3>
+<pre><code class="language-text">Input Text
+  v
+Tokenizer
+  v
+Embeddings + Position
+  v
+Encoder Layers
+  v
+Contextual Representation
+  v
+Classification / Embedding / Entity Extraction
+</code></pre>
+<p>Example input:</p>
+<blockquote>
+<p>This transaction looks suspicious.</p>
+</blockquote>
+<p>Example output:</p>
+<pre><code class="language-text">Fraud risk = High
+</code></pre>
+<h3 id="decoder-only-flow">Decoder-Only Flow</h3>
+<pre><code class="language-text">User Prompt
+  v
+Tokenizer
+  v
+Embeddings + Position
+  v
+Masked Self-Attention Decoder Layers
+  v
+Next Token Prediction
+  v
+Generated Response
+</code></pre>
+<p>Example input:</p>
+<blockquote>
+<p>Explain fraud detection.</p>
+</blockquote>
+<p>Example output:</p>
+<pre><code class="language-text">Fraud detection is the process of identifying suspicious activity...
+</code></pre>
+<h3 id="encoder-decoder-flow">Encoder-Decoder Flow</h3>
+<pre><code class="language-text">Input Document
+  v
+Encoder understands the input
+  v
+Decoder attends to encoder output
+  v
+Generates target text
+</code></pre>
+<p>Example input:</p>
+<pre><code class="language-text">Long policy document
+</code></pre>
+<p>Example output:</p>
+<pre><code class="language-text">Short policy summary
+</code></pre>
+<h2 id="9-which-one-is-best">9. Which One Is Best?</h2>
+<p>There is no single best architecture. The best architecture depends on the problem.</p>
+<ul>
+<li><strong>Classify text</strong></li>
+<li>Best architecture: Encoder-only.</li>
+<li>
+<p>Why: Understands full text deeply.</p>
+</li>
+<li>
+<p><strong>Extract entities</strong></p>
+</li>
+<li>Best architecture: Encoder-only.</li>
+<li>
+<p>Why: Good for token-level understanding.</p>
+</li>
+<li>
+<p><strong>Create embeddings</strong></p>
+</li>
+<li>Best architecture: Encoder-only.</li>
+<li>
+<p>Why: Converts text into vector representation.</p>
+</li>
+<li>
+<p><strong>Semantic search</strong></p>
+</li>
+<li>Best architecture: Encoder-only.</li>
+<li>
+<p>Why: Good for similarity matching.</p>
+</li>
+<li>
+<p><strong>Generate chatbot answers</strong></p>
+</li>
+<li>Best architecture: Decoder-only.</li>
+<li>
+<p>Why: Best for natural response generation.</p>
+</li>
+<li>
+<p><strong>Build a ChatGPT-style assistant</strong></p>
+</li>
+<li>Best architecture: Decoder-only.</li>
+<li>
+<p>Why: Strong for conversation and reasoning.</p>
+</li>
+<li>
+<p><strong>Summarize documents</strong></p>
+</li>
+<li>Best architecture: Encoder-decoder or decoder-only with RAG.</li>
+<li>
+<p>Why: Needs input understanding and output generation.</p>
+</li>
+<li>
+<p><strong>Translate language</strong></p>
+</li>
+<li>Best architecture: Encoder-decoder.</li>
+<li>
+<p>Why: Converts source sequence to target sequence.</p>
+</li>
+<li>
+<p><strong>Long document processing</strong></p>
+</li>
+<li>Best architecture: Longformer, BigBird, or long-context decoder models.</li>
+<li>
+<p>Why: Handles long context better.</p>
+</li>
+<li>
+<p><strong>Agentic AI</strong></p>
+</li>
+<li>Best architecture: Decoder-only instruction-tuned model.</li>
+<li>Why: Can plan, call tools, and generate responses.</li>
+</ul>
+<h2 id="10-important-research-papers">10. Important Research Papers</h2>
+<ul>
+<li><strong>Attention Is All You Need</strong></li>
+<li>
+<p>Link: https://arxiv.org/abs/1706.03762</p>
+</li>
+<li>
+<p><strong>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/1810.04805</p>
+</li>
+<li>
+<p><strong>RoBERTa: A Robustly Optimized BERT Pretraining Approach</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/1907.11692</p>
+</li>
+<li>
+<p><strong>ALBERT: A Lite BERT for Self-supervised Learning of Language Representations</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/1909.11942</p>
+</li>
+<li>
+<p><strong>DistilBERT, a distilled version of BERT</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/1910.01108</p>
+</li>
+<li>
+<p><strong>ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/2003.10555</p>
+</li>
+<li>
+<p><strong>Improving Language Understanding by Generative Pre-Training</strong></p>
+</li>
+<li>
+<p>Link: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf</p>
+</li>
+<li>
+<p><strong>Language Models are Few-Shot Learners</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/2005.14165</p>
+</li>
+<li>
+<p><strong>LLaMA: Open and Efficient Foundation Language Models</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/2302.13971</p>
+</li>
+<li>
+<p><strong>Mistral 7B</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/2310.06825</p>
+</li>
+<li>
+<p><strong>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/1910.10683</p>
+</li>
+<li>
+<p><strong>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension</strong></p>
+</li>
+<li>
+<p>Link: https://arxiv.org/abs/1910.13461</p>
+</li>
+<li>
+<p><strong>Longformer: The Long-Document Transformer</strong></p>
+</li>
+<li>Link: https://arxiv.org/abs/2004.05150</li>
+</ul>
+<h2 id="11-easy-interview-answer">11. Easy Interview Answer</h2>
+<p>You can say:</p>
+<blockquote>
+<p>Transformers can be used in three major ways: encoder-only, decoder-only, and encoder-decoder. Encoder-only models are used to understand text, so they are best for classification, semantic search, named entity recognition, and reranking. Decoder-only models generate text one token at a time, so they are best for chatbots, content generation, code generation, and agentic AI. Encoder-decoder models first understand the input using an encoder and then generate output using a decoder, so they are best for translation, summarization, and question answering.</p>
+<p>BERT is a popular encoder-only model. GPT is a popular decoder-only model. T5 and BART are popular encoder-decoder models. The best model depends on the problem: use encoder-only for understanding, decoder-only for generation, and encoder-decoder for input-to-output transformation.</p>
+</blockquote>
+<h2 id="12-memory-trick">12. Memory Trick</h2>
+<p>Remember:</p>
+<pre><code class="language-text">Encoder = Understand
+Decoder = Generate
+Encoder-Decoder = Understand + Generate
+</code></pre>
+<p>Best-fit rule:</p>
+<pre><code class="language-text">Classification / Search / Extraction = Encoder-only
+Chatbot / Generation / Agents = Decoder-only
+Translation / Summarization / Rewriting = Encoder-decoder
+</code></pre>
+<h2 id="quick-revision-notes">Quick Revision Notes</h2>
+<ul>
+<li>Encoder-only models understand input.</li>
+<li>Decoder-only models generate output.</li>
+<li>Encoder-decoder models understand input and generate output.</li>
+<li>Use encoder-only for classification, search, embeddings, NER, and reranking.</li>
+<li>Use decoder-only for chatbots, reasoning, content generation, code generation, and agents.</li>
+<li>Use encoder-decoder for translation, summarization, rewriting, and document-based generation.</li>
+<li>BERT belongs to the encoder-only family.</li>
+<li>GPT belongs to the decoder-only family.</li>
+<li>T5 and BART belong to the encoder-decoder family.</li>
+</ul>
+    </main>
+    <footer class="site-footer">
+      <p>Created by Abhinav Kanduri for knowledge transfer only.</p>
+      <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">Connect on LinkedIn</a>
+    </footer>
+  </body>
+</html>

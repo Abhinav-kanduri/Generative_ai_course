@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deep Learning Algorithms and Their Use Cases | Generative AI Course</title>
+    <link rel="stylesheet" href="../assets/course-ui.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Course navigation">
+        <a class="brand" href="../index.html">Generative AI Course</a>
+        <div class="nav-links">
+          <a href="../index.html#modules">Modules</a>
+          <a href="../Foundation_week1/README.html">Foundation Week 1</a>
+          <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main class="markdown-page">
+<h1 id="deep-learning-algorithms-and-their-use-cases">Deep Learning Algorithms and Their Use Cases</h1>
+<p><strong>Author:</strong> Abhinav Kanduri<br />
+<strong>GitHub:</strong> @Abhinav-kanduri<br />
+<strong>LinkedIn:</strong> https://www.linkedin.com/in/abhinav-kanduri-a943b9353/<br />
+<strong>Purpose:</strong> Knowledge transfer only.</p>
+<h2 id="course-navigation">Course Navigation</h2>
+<ul>
+<li><a href="../README.html">Course home</a></li>
+<li><a href="README.html">Foundation Week 1 dashboard</a></li>
+<li><a href="Topics_covered.html">Foundation Week 1 overview</a></li>
+<li><a href="Machine_Learning_Algorithms.html">Machine Learning algorithms</a></li>
+<li><a href="Natural_Language_Processing_Techniques.html">Natural Language Processing techniques</a></li>
+<li><a href="Transformer_Architecture_End_to_End.html">Transformer architecture</a></li>
+<li><a href="Transformer_Model_Families.html">Transformer model families</a></li>
+</ul>
+<p>This README summarizes common <strong>Deep Learning algorithms and architectures</strong> and the types of problems they solve.</p>
+<p>Deep learning is useful when data contains complex patterns, such as images, speech, text, sequences, graphs, recommendations, and multimodal inputs.</p>
+<h2 id="how-to-use-this-guide">How to Use This Guide</h2>
+<p>Start with the problem:</p>
+<ol>
+<li>Are you working with structured prediction?</li>
+<li>Are you analyzing images or video?</li>
+<li>Do you need object detection or image segmentation?</li>
+<li>Are you working with sequences, text, or time series?</li>
+<li>Do you need generation, recommendations, speech processing, or graph learning?</li>
+<li>Do you need a system that learns from rewards?</li>
+</ol>
+<p>Once the problem is clear, choose the matching deep learning architecture.</p>
+<h2 id="1-artificial-neural-networks">1. Artificial Neural Networks</h2>
+<p>Artificial Neural Networks learn patterns from structured data using layers of neurons.</p>
+<ul>
+<li><strong>Artificial Neural Network</strong></li>
+<li>What it does: Learns non-linear patterns from structured data.</li>
+<li>
+<p>Solves: Classification, regression, prediction, and scoring.</p>
+</li>
+<li>
+<p><strong>Multilayer Perceptron</strong></p>
+</li>
+<li>What it does: Uses a basic feed-forward neural network.</li>
+<li>Solves: Customer churn prediction, fraud detection, loan approval, and price prediction.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Predict whether a customer will leave.</li>
+<li>Predict house price or sales amount.</li>
+<li>Predict credit risk score.</li>
+</ul>
+<h2 id="2-convolutional-neural-networks">2. Convolutional Neural Networks</h2>
+<p>Convolutional Neural Networks, or CNNs, are mainly used for image, video, and visual pattern recognition.</p>
+<ul>
+<li><strong>Convolutional Neural Network</strong></li>
+<li>What it does: Extracts visual patterns such as edges, shapes, and objects.</li>
+<li>
+<p>Solves: Image classification, object detection, and medical imaging.</p>
+</li>
+<li>
+<p><strong>LeNet</strong></p>
+</li>
+<li>What it does: Uses an early image recognition network.</li>
+<li>
+<p>Solves: Digit recognition.</p>
+</li>
+<li>
+<p><strong>AlexNet</strong></p>
+</li>
+<li>What it does: Uses a deep image classification model.</li>
+<li>
+<p>Solves: Large-scale image classification.</p>
+</li>
+<li>
+<p><strong>VGGNet</strong></p>
+</li>
+<li>What it does: Uses deep stacked convolution layers.</li>
+<li>
+<p>Solves: Image classification.</p>
+</li>
+<li>
+<p><strong>ResNet</strong></p>
+</li>
+<li>What it does: Uses skip connections to train deeper networks.</li>
+<li>
+<p>Solves: Image classification and medical image analysis.</p>
+</li>
+<li>
+<p><strong>DenseNet</strong></p>
+</li>
+<li>What it does: Connects each layer to every other layer.</li>
+<li>
+<p>Solves: Image recognition and feature reuse.</p>
+</li>
+<li>
+<p><strong>MobileNet</strong></p>
+</li>
+<li>What it does: Uses a lightweight image model.</li>
+<li>
+<p>Solves: Mobile and edge device vision.</p>
+</li>
+<li>
+<p><strong>EfficientNet</strong></p>
+</li>
+<li>What it does: Uses an optimized image model.</li>
+<li>
+<p>Solves: High-accuracy image classification.</p>
+</li>
+<li>
+<p><strong>Inception Network</strong></p>
+</li>
+<li>What it does: Captures features at multiple scales.</li>
+<li>Solves: Object and image recognition.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Identify whether an image contains a cat or dog.</li>
+<li>Detect defective products in manufacturing.</li>
+<li>Analyze medical scans.</li>
+<li>Recognize handwritten digits.</li>
+</ul>
+<h2 id="3-object-detection-algorithms">3. Object Detection Algorithms</h2>
+<p>Object detection is used when you need to locate and classify objects inside an image.</p>
+<ul>
+<li><strong>Region-Based Convolutional Neural Network</strong></li>
+<li>What it does: Detects objects using region proposals.</li>
+<li>
+<p>Solves: Object detection.</p>
+</li>
+<li>
+<p><strong>Fast Region-Based Convolutional Neural Network</strong></p>
+</li>
+<li>What it does: Speeds up region-based object detection.</li>
+<li>
+<p>Solves: Object localization.</p>
+</li>
+<li>
+<p><strong>Faster Region-Based Convolutional Neural Network</strong></p>
+</li>
+<li>What it does: Improves detection speed using region proposal networks.</li>
+<li>
+<p>Solves: Real-time object detection.</p>
+</li>
+<li>
+<p><strong>You Only Look Once</strong></p>
+</li>
+<li>What it does: Detects objects in one forward pass.</li>
+<li>
+<p>Solves: Real-time detection.</p>
+</li>
+<li>
+<p><strong>Single Shot Detector</strong></p>
+</li>
+<li>What it does: Performs fast object detection.</li>
+<li>
+<p>Solves: Surveillance and traffic monitoring.</p>
+</li>
+<li>
+<p><strong>RetinaNet</strong></p>
+</li>
+<li>What it does: Handles class imbalance in object detection.</li>
+<li>
+<p>Solves: Detecting small or rare objects.</p>
+</li>
+<li>
+<p><strong>Detectron-style Models</strong></p>
+</li>
+<li>What it does: Provides advanced object detection frameworks.</li>
+<li>Solves: Production computer vision systems.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Detect cars and people in video.</li>
+<li>Detect damaged packages.</li>
+<li>Detect traffic signs.</li>
+<li>Detect items on retail shelves.</li>
+</ul>
+<h2 id="4-image-segmentation-algorithms">4. Image Segmentation Algorithms</h2>
+<p>Image segmentation is used when each pixel in an image needs to be classified.</p>
+<ul>
+<li><strong>Fully Convolutional Network</strong></li>
+<li>What it does: Performs pixel-level classification.</li>
+<li>
+<p>Solves: Semantic segmentation.</p>
+</li>
+<li>
+<p><strong>U-Net</strong></p>
+</li>
+<li>What it does: Provides strong image segmentation, especially for medical images.</li>
+<li>
+<p>Solves: Tumor, organ, and cell segmentation.</p>
+</li>
+<li>
+<p><strong>Mask Region-Based Convolutional Neural Network</strong></p>
+</li>
+<li>What it does: Detects objects and creates object masks.</li>
+<li>
+<p>Solves: Instance segmentation.</p>
+</li>
+<li>
+<p><strong>DeepLab</strong></p>
+</li>
+<li>What it does: Uses advanced convolution methods for segmentation.</li>
+<li>
+<p>Solves: Road, object, and scene segmentation.</p>
+</li>
+<li>
+<p><strong>Segment Anything Model</strong></p>
+</li>
+<li>What it does: Performs general-purpose segmentation.</li>
+<li>Solves: Interactive and zero-shot segmentation.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Separate tumor area from a medical image.</li>
+<li>Detect road lanes in self-driving cars.</li>
+<li>Separate foreground and background.</li>
+<li>Identify individual objects in an image.</li>
+</ul>
+<h2 id="5-recurrent-neural-networks">5. Recurrent Neural Networks</h2>
+<p>Recurrent Neural Networks are mainly used for sequence data.</p>
+<ul>
+<li><strong>Recurrent Neural Network</strong></li>
+<li>What it does: Learns from sequential data.</li>
+<li>
+<p>Solves: Time series, text, and speech problems.</p>
+</li>
+<li>
+<p><strong>Long Short-Term Memory Network</strong></p>
+</li>
+<li>What it does: Remembers long-term dependencies.</li>
+<li>
+<p>Solves: Language modeling and forecasting.</p>
+</li>
+<li>
+<p><strong>Gated Recurrent Unit</strong></p>
+</li>
+<li>What it does: Provides a faster sequence model than LSTM.</li>
+<li>
+<p>Solves: Text and time series prediction.</p>
+</li>
+<li>
+<p><strong>Bidirectional Recurrent Neural Network</strong></p>
+</li>
+<li>What it does: Reads sequences forward and backward.</li>
+<li>
+<p>Solves: Better context understanding.</p>
+</li>
+<li>
+<p><strong>Bidirectional Long Short-Term Memory Network</strong></p>
+</li>
+<li>What it does: Captures past and future context.</li>
+<li>Solves: Named entity recognition and sentiment analysis.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Predict the next word in a sentence.</li>
+<li>Forecast stock or sales trends.</li>
+<li>Analyze customer call transcripts.</li>
+<li>Detect named entities in text.</li>
+</ul>
+<h2 id="6-sequence-to-sequence-models">6. Sequence-to-Sequence Models</h2>
+<p>Sequence-to-sequence models are used when both input and output are sequences.</p>
+<ul>
+<li><strong>Encoder-Decoder Model</strong></li>
+<li>What it does: Converts one sequence into another.</li>
+<li>
+<p>Solves: Translation and summarization.</p>
+</li>
+<li>
+<p><strong>Sequence-to-Sequence with Attention</strong></p>
+</li>
+<li>What it does: Focuses on important input words.</li>
+<li>
+<p>Solves: Better translation and summarization.</p>
+</li>
+<li>
+<p><strong>Pointer Generator Network</strong></p>
+</li>
+<li>What it does: Copies important words from source text.</li>
+<li>
+<p>Solves: Document summarization.</p>
+</li>
+<li>
+<p><strong>Transformer Encoder-Decoder</strong></p>
+</li>
+<li>What it does: Uses modern sequence transformation.</li>
+<li>Solves: Translation, summarization, and question answering.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Translate English to French.</li>
+<li>Summarize a document.</li>
+<li>Convert speech transcripts into clean notes.</li>
+<li>Generate an answer from a passage.</li>
+</ul>
+<h2 id="7-transformer-based-algorithms">7. Transformer-Based Algorithms</h2>
+<p>Transformers are used in modern Large Language Models, NLP, vision, speech, and multimodal AI.</p>
+<ul>
+<li><strong>Transformer</strong></li>
+<li>What it does: Uses attention to understand relationships between tokens.</li>
+<li>
+<p>Solves: Language understanding and generation.</p>
+</li>
+<li>
+<p><strong>Encoder-Only Transformer</strong></p>
+</li>
+<li>What it does: Deeply understands input text.</li>
+<li>
+<p>Solves: Classification, entity recognition, and semantic search.</p>
+</li>
+<li>
+<p><strong>Decoder-Only Transformer</strong></p>
+</li>
+<li>What it does: Generates text token by token.</li>
+<li>
+<p>Solves: Chatbots, content generation, and code generation.</p>
+</li>
+<li>
+<p><strong>Encoder-Decoder Transformer</strong></p>
+</li>
+<li>What it does: Converts one text sequence to another.</li>
+<li>
+<p>Solves: Translation and summarization.</p>
+</li>
+<li>
+<p><strong>BERT</strong></p>
+</li>
+<li>What it does: Provides contextual language understanding.</li>
+<li>
+<p>Solves: Sentiment analysis and entity extraction.</p>
+</li>
+<li>
+<p><strong>GPT</strong></p>
+</li>
+<li>What it does: Performs text generation and reasoning.</li>
+<li>
+<p>Solves: Chatbots and assistants.</p>
+</li>
+<li>
+<p><strong>Text-to-Text Transfer Transformer</strong></p>
+</li>
+<li>What it does: Converts every task into a text-to-text format.</li>
+<li>
+<p>Solves: Translation, summarization, and classification.</p>
+</li>
+<li>
+<p><strong>Vision Transformer</strong></p>
+</li>
+<li>What it does: Applies transformer architecture to images.</li>
+<li>
+<p>Solves: Image classification.</p>
+</li>
+<li>
+<p><strong>Swin Transformer</strong></p>
+</li>
+<li>What it does: Uses hierarchical vision transformers.</li>
+<li>
+<p>Solves: Object detection and segmentation.</p>
+</li>
+<li>
+<p><strong>Retrieval-Augmented Transformer Models</strong></p>
+</li>
+<li>What it does: Combines retrieval with generation.</li>
+<li>Solves: Document question answering.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Build a chatbot.</li>
+<li>Answer questions from documents.</li>
+<li>Classify customer complaints.</li>
+<li>Generate code.</li>
+<li>Summarize legal documents.</li>
+</ul>
+<h2 id="8-autoencoder-algorithms">8. Autoencoder Algorithms</h2>
+<p>Autoencoders learn compressed representations of data.</p>
+<ul>
+<li><strong>Autoencoder</strong></li>
+<li>What it does: Compresses and reconstructs data.</li>
+<li>
+<p>Solves: Dimensionality reduction and anomaly detection.</p>
+</li>
+<li>
+<p><strong>Denoising Autoencoder</strong></p>
+</li>
+<li>What it does: Removes noise from data.</li>
+<li>
+<p>Solves: Image cleaning and signal cleaning.</p>
+</li>
+<li>
+<p><strong>Sparse Autoencoder</strong></p>
+</li>
+<li>What it does: Learns important hidden features.</li>
+<li>
+<p>Solves: Feature learning.</p>
+</li>
+<li>
+<p><strong>Variational Autoencoder</strong></p>
+</li>
+<li>What it does: Generates new data from a learned distribution.</li>
+<li>
+<p>Solves: Image generation and synthetic data.</p>
+</li>
+<li>
+<p><strong>Convolutional Autoencoder</strong></p>
+</li>
+<li>What it does: Applies autoencoders to images.</li>
+<li>Solves: Image compression and reconstruction.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Detect unusual transactions.</li>
+<li>Compress images.</li>
+<li>Remove noise from images.</li>
+<li>Generate synthetic images.</li>
+</ul>
+<h2 id="9-generative-adversarial-networks">9. Generative Adversarial Networks</h2>
+<p>Generative Adversarial Networks, or GANs, are used to generate realistic synthetic data.</p>
+<ul>
+<li><strong>Generative Adversarial Network</strong></li>
+<li>What it does: Uses a generator and discriminator to create realistic data.</li>
+<li>
+<p>Solves: Image generation.</p>
+</li>
+<li>
+<p><strong>Deep Convolutional Generative Adversarial Network</strong></p>
+</li>
+<li>What it does: Generates images using convolutional layers.</li>
+<li>
+<p>Solves: Image synthesis.</p>
+</li>
+<li>
+<p><strong>Conditional Generative Adversarial Network</strong></p>
+</li>
+<li>What it does: Generates data based on a condition.</li>
+<li>
+<p>Solves: Controlled image generation.</p>
+</li>
+<li>
+<p><strong>Cycle Generative Adversarial Network</strong></p>
+</li>
+<li>What it does: Converts one image style to another.</li>
+<li>
+<p>Solves: Image-to-image translation.</p>
+</li>
+<li>
+<p><strong>Style Generative Adversarial Network</strong></p>
+</li>
+<li>What it does: Generates high-quality realistic images.</li>
+<li>Solves: Face generation and design generation.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Generate synthetic faces.</li>
+<li>Convert day images to night images.</li>
+<li>Create artificial training data.</li>
+<li>Improve low-resolution images.</li>
+</ul>
+<h2 id="10-diffusion-models">10. Diffusion Models</h2>
+<p>Diffusion models are used in modern image, video, audio, and generative AI systems.</p>
+<ul>
+<li><strong>Diffusion Model</strong></li>
+<li>What it does: Learns to remove noise step by step to generate data.</li>
+<li>
+<p>Solves: Image generation.</p>
+</li>
+<li>
+<p><strong>Denoising Diffusion Probabilistic Model</strong></p>
+</li>
+<li>What it does: Generates data through a denoising process.</li>
+<li>
+<p>Solves: High-quality image synthesis.</p>
+</li>
+<li>
+<p><strong>Latent Diffusion Model</strong></p>
+</li>
+<li>What it does: Performs diffusion in compressed latent space.</li>
+<li>
+<p>Solves: Faster image generation.</p>
+</li>
+<li>
+<p><strong>Stable Diffusion-style Models</strong></p>
+</li>
+<li>What it does: Generates images from text.</li>
+<li>
+<p>Solves: Creative image generation.</p>
+</li>
+<li>
+<p><strong>Video Diffusion Models</strong></p>
+</li>
+<li>What it does: Generates or edits videos.</li>
+<li>Solves: Video generation.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Generate images from text.</li>
+<li>Edit images using prompts.</li>
+<li>Generate product mockups.</li>
+<li>Generate synthetic training images.</li>
+</ul>
+<h2 id="11-graph-neural-networks">11. Graph Neural Networks</h2>
+<p>Graph Neural Networks are used when data is represented as nodes and relationships.</p>
+<ul>
+<li><strong>Graph Neural Network</strong></li>
+<li>What it does: Learns from graph-structured data.</li>
+<li>
+<p>Solves: Relationship prediction.</p>
+</li>
+<li>
+<p><strong>Graph Convolutional Network</strong></p>
+</li>
+<li>What it does: Applies convolution on graph data.</li>
+<li>
+<p>Solves: Node classification.</p>
+</li>
+<li>
+<p><strong>Graph Attention Network</strong></p>
+</li>
+<li>What it does: Uses attention over graph neighbors.</li>
+<li>
+<p>Solves: Link prediction.</p>
+</li>
+<li>
+<p><strong>GraphSAGE</strong></p>
+</li>
+<li>What it does: Provides scalable graph learning.</li>
+<li>
+<p>Solves: Large graph recommendations.</p>
+</li>
+<li>
+<p><strong>Message Passing Neural Network</strong></p>
+</li>
+<li>What it does: Passes information between connected nodes.</li>
+<li>Solves: Molecular modeling and fraud rings.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Detect fraud networks.</li>
+<li>Recommend friends or products.</li>
+<li>Analyze molecule structure.</li>
+<li>Detect suspicious account relationships.</li>
+</ul>
+<h2 id="12-deep-reinforcement-learning">12. Deep Reinforcement Learning</h2>
+<p>Deep reinforcement learning is used when an agent learns by taking actions and receiving rewards.</p>
+<ul>
+<li><strong>Deep Q-Network</strong></li>
+<li>What it does: Combines Q-learning with neural networks.</li>
+<li>
+<p>Solves: Game playing and decision systems.</p>
+</li>
+<li>
+<p><strong>Double Deep Q-Network</strong></p>
+</li>
+<li>What it does: Reduces overestimation in Q-learning.</li>
+<li>
+<p>Solves: Stable decision learning.</p>
+</li>
+<li>
+<p><strong>Dueling Deep Q-Network</strong></p>
+</li>
+<li>What it does: Separates value and advantage learning.</li>
+<li>
+<p>Solves: Better action selection.</p>
+</li>
+<li>
+<p><strong>Policy Gradient Network</strong></p>
+</li>
+<li>What it does: Learns action policy directly.</li>
+<li>
+<p>Solves: Robotics and control systems.</p>
+</li>
+<li>
+<p><strong>Actor-Critic Network</strong></p>
+</li>
+<li>What it does: Combines policy and value learning.</li>
+<li>
+<p>Solves: Complex decision-making.</p>
+</li>
+<li>
+<p><strong>Proximal Policy Optimization</strong></p>
+</li>
+<li>What it does: Provides stable deep reinforcement learning.</li>
+<li>
+<p>Solves: Robotics, games, and optimization.</p>
+</li>
+<li>
+<p><strong>Deep Deterministic Policy Gradient</strong></p>
+</li>
+<li>What it does: Handles continuous actions.</li>
+<li>Solves: Autonomous systems.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Train a game-playing agent.</li>
+<li>Optimize pricing decisions.</li>
+<li>Optimize ad or offer recommendations.</li>
+<li>Train robot movement.</li>
+</ul>
+<h2 id="13-recommendation-deep-learning-algorithms">13. Recommendation Deep Learning Algorithms</h2>
+<p>Recommendation deep learning algorithms are used for personalization and ranking.</p>
+<ul>
+<li><strong>Neural Collaborative Filtering</strong></li>
+<li>What it does: Learns user-item interaction patterns.</li>
+<li>
+<p>Solves: Product recommendation.</p>
+</li>
+<li>
+<p><strong>Deep Factorization Machine</strong></p>
+</li>
+<li>What it does: Combines deep learning and feature interactions.</li>
+<li>
+<p>Solves: Click prediction.</p>
+</li>
+<li>
+<p><strong>Wide and Deep Network</strong></p>
+</li>
+<li>What it does: Combines memorization and generalization.</li>
+<li>
+<p>Solves: Search and recommendation.</p>
+</li>
+<li>
+<p><strong>Deep Interest Network</strong></p>
+</li>
+<li>What it does: Models user behavior interest.</li>
+<li>
+<p>Solves: E-commerce recommendation.</p>
+</li>
+<li>
+<p><strong>Two-Tower Model</strong></p>
+</li>
+<li>What it does: Learns user and item embeddings separately.</li>
+<li>
+<p>Solves: Large-scale retrieval.</p>
+</li>
+<li>
+<p><strong>Sequential Recommendation Model</strong></p>
+</li>
+<li>What it does: Uses user behavior sequence.</li>
+<li>Solves: Next-item recommendation.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Recommend products to users.</li>
+<li>Recommend movies or videos.</li>
+<li>Rank search results.</li>
+<li>Predict click-through rate.</li>
+</ul>
+<h2 id="14-speech-deep-learning-algorithms">14. Speech Deep Learning Algorithms</h2>
+<p>Speech deep learning algorithms are used for audio, voice, and speech processing.</p>
+<ul>
+<li><strong>Convolutional Neural Network for Speech</strong></li>
+<li>What it does: Extracts audio features.</li>
+<li>
+<p>Solves: Speech classification.</p>
+</li>
+<li>
+<p><strong>Recurrent Neural Network for Speech</strong></p>
+</li>
+<li>What it does: Processes audio sequences.</li>
+<li>
+<p>Solves: Speech recognition.</p>
+</li>
+<li>
+<p><strong>Connectionist Temporal Classification</strong></p>
+</li>
+<li>What it does: Aligns audio and text without exact timestamps.</li>
+<li>
+<p>Solves: Speech-to-text.</p>
+</li>
+<li>
+<p><strong>WaveNet</strong></p>
+</li>
+<li>What it does: Generates realistic speech audio.</li>
+<li>
+<p>Solves: Text-to-speech.</p>
+</li>
+<li>
+<p><strong>Transformer Speech Models</strong></p>
+</li>
+<li>What it does: Understands and generates speech sequences.</li>
+<li>
+<p>Solves: Speech recognition.</p>
+</li>
+<li>
+<p><strong>Whisper-style Models</strong></p>
+</li>
+<li>What it does: Converts speech into text.</li>
+<li>Solves: Multilingual transcription.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Convert calls into text.</li>
+<li>Generate voice from text.</li>
+<li>Detect speaker emotion.</li>
+<li>Identify speakers.</li>
+</ul>
+<h2 id="15-multimodal-deep-learning-algorithms">15. Multimodal Deep Learning Algorithms</h2>
+<p>Multimodal deep learning is used when a system works with more than one data type, such as text, image, audio, or video.</p>
+<ul>
+<li><strong>Contrastive Language-Image Pretraining</strong></li>
+<li>What it does: Connects images and text.</li>
+<li>
+<p>Solves: Image-text matching.</p>
+</li>
+<li>
+<p><strong>Vision-Language Models</strong></p>
+</li>
+<li>What it does: Understands both images and text.</li>
+<li>
+<p>Solves: Visual question answering.</p>
+</li>
+<li>
+<p><strong>Multimodal Transformer</strong></p>
+</li>
+<li>What it does: Processes text, image, audio, or video together.</li>
+<li>
+<p>Solves: Multimodal reasoning.</p>
+</li>
+<li>
+<p><strong>Image Captioning Models</strong></p>
+</li>
+<li>What it does: Generates text descriptions from images.</li>
+<li>
+<p>Solves: Image captioning.</p>
+</li>
+<li>
+<p><strong>Visual Question Answering Models</strong></p>
+</li>
+<li>What it does: Answers questions about images.</li>
+<li>Solves: Image reasoning.</li>
+</ul>
+<p>Example use cases:</p>
+<ul>
+<li>Ask questions about an image.</li>
+<li>Generate captions for images.</li>
+<li>Search images using text.</li>
+<li>Analyze documents with text and images.</li>
+</ul>
+<h2 id="most-common-deep-learning-algorithms-in-real-projects">Most Common Deep Learning Algorithms in Real Projects</h2>
+<ul>
+<li><strong>Image classification</strong></li>
+<li>
+<p>Use CNN, ResNet, or EfficientNet.</p>
+</li>
+<li>
+<p><strong>Object detection</strong></p>
+</li>
+<li>
+<p>Use You Only Look Once or Faster R-CNN.</p>
+</li>
+<li>
+<p><strong>Image segmentation</strong></p>
+</li>
+<li>
+<p>Use U-Net or Mask R-CNN.</p>
+</li>
+<li>
+<p><strong>Text classification</strong></p>
+</li>
+<li>
+<p>Use Transformer or BERT.</p>
+</li>
+<li>
+<p><strong>Chatbot</strong></p>
+</li>
+<li>
+<p>Use decoder-only Transformer or Large Language Model.</p>
+</li>
+<li>
+<p><strong>Document question answering</strong></p>
+</li>
+<li>
+<p>Use Transformer or Retrieval Augmented Generation.</p>
+</li>
+<li>
+<p><strong>Text summarization</strong></p>
+</li>
+<li>
+<p>Use encoder-decoder Transformer.</p>
+</li>
+<li>
+<p><strong>Time series forecasting</strong></p>
+</li>
+<li>
+<p>Use LSTM, GRU, or Transformer.</p>
+</li>
+<li>
+<p><strong>Fraud detection</strong></p>
+</li>
+<li>
+<p>Use ANN, Autoencoder, or Graph Neural Network.</p>
+</li>
+<li>
+<p><strong>Recommendation system</strong></p>
+</li>
+<li>
+<p>Use Two-Tower Model or Neural Collaborative Filtering.</p>
+</li>
+<li>
+<p><strong>Speech-to-text</strong></p>
+</li>
+<li>
+<p>Use Transformer Speech Models or Connectionist Temporal Classification.</p>
+</li>
+<li>
+<p><strong>Image generation</strong></p>
+</li>
+<li>
+<p>Use Diffusion Model or Generative Adversarial Network.</p>
+</li>
+<li>
+<p><strong>Anomaly detection</strong></p>
+</li>
+<li>
+<p>Use Autoencoder or Variational Autoencoder.</p>
+</li>
+<li>
+<p><strong>Graph relationship analysis</strong></p>
+</li>
+<li>Use Graph Neural Network.</li>
+</ul>
+<h2 id="interview-friendly-summary">Interview-Friendly Summary</h2>
+<p>Deep learning mainly solves these types of problems:</p>
+<ul>
+<li><strong>Structured prediction</strong></li>
+<li>
+<p>Use Artificial Neural Networks.</p>
+</li>
+<li>
+<p><strong>Image understanding</strong></p>
+</li>
+<li>
+<p>Use Convolutional Neural Networks.</p>
+</li>
+<li>
+<p><strong>Object detection</strong></p>
+</li>
+<li>
+<p>Use You Only Look Once or Faster R-CNN.</p>
+</li>
+<li>
+<p><strong>Pixel-level image analysis</strong></p>
+</li>
+<li>
+<p>Use U-Net or Mask R-CNN.</p>
+</li>
+<li>
+<p><strong>Sequential data understanding</strong></p>
+</li>
+<li>
+<p>Use RNN or LSTM.</p>
+</li>
+<li>
+<p><strong>Text understanding</strong></p>
+</li>
+<li>
+<p>Use transformer encoder models.</p>
+</li>
+<li>
+<p><strong>Text generation</strong></p>
+</li>
+<li>
+<p>Use transformer decoder models.</p>
+</li>
+<li>
+<p><strong>Translation and summarization</strong></p>
+</li>
+<li>
+<p>Use encoder-decoder transformer models.</p>
+</li>
+<li>
+<p><strong>Anomaly detection</strong></p>
+</li>
+<li>
+<p>Use autoencoders.</p>
+</li>
+<li>
+<p><strong>Synthetic data generation</strong></p>
+</li>
+<li>
+<p>Use GANs or diffusion models.</p>
+</li>
+<li>
+<p><strong>Graph-based relationship learning</strong></p>
+</li>
+<li>
+<p>Use Graph Neural Networks.</p>
+</li>
+<li>
+<p><strong>Decision optimization</strong></p>
+</li>
+<li>
+<p>Use Deep Reinforcement Learning.</p>
+</li>
+<li>
+<p><strong>Personalization</strong></p>
+</li>
+<li>
+<p>Use deep recommendation models.</p>
+</li>
+<li>
+<p><strong>Speech processing</strong></p>
+</li>
+<li>
+<p>Use speech transformers and recurrent networks.</p>
+</li>
+<li>
+<p><strong>Multimodal understanding</strong></p>
+</li>
+<li>Use vision-language models.</li>
+</ul>
+<p>The most important deep learning algorithms to focus on are:</p>
+<ul>
+<li>Artificial Neural Networks</li>
+<li>Convolutional Neural Networks</li>
+<li>Recurrent Neural Networks</li>
+<li>Long Short-Term Memory Networks</li>
+<li>Transformers</li>
+<li>Autoencoders</li>
+<li>Generative Adversarial Networks</li>
+<li>Diffusion Models</li>
+<li>Graph Neural Networks</li>
+<li>Deep Reinforcement Learning models</li>
+</ul>
+<h2 id="interview-tip">Interview Tip</h2>
+<p>When explaining a deep learning solution, begin with the data type and the business problem.</p>
+<p>Example:</p>
+<blockquote>
+<p>Since the task is image classification, I would start with a Convolutional Neural Network. For higher accuracy, I would compare ResNet, EfficientNet, or Vision Transformer depending on the dataset size, speed requirement, and deployment environment.</p>
+</blockquote>
+    </main>
+    <footer class="site-footer">
+      <p>Created by Abhinav Kanduri for knowledge transfer only.</p>
+      <a href="https://www.linkedin.com/in/abhinav-kanduri-a943b9353/">Connect on LinkedIn</a>
+    </footer>
+  </body>
+</html>
